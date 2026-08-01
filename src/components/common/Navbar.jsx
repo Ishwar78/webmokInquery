@@ -22,8 +22,8 @@ export default function Navbar() {
         <a className="wm-brand" href="#top" onClick={closeMenu}>
           <img src="/assets/webmok-logo.png" alt="Web Mok" />
           <div>
-            <strong>Web Mok</strong>
-            <span>Premium Event Registration Page</span>
+            {/* <strong>Web Mok</strong> */}
+            {/* <span>Premium Event Registration Page</span> */}
           </div>
         </a>
 
