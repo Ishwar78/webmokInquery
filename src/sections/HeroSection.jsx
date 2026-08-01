@@ -135,7 +135,7 @@ export default function HeroSection() {
 
             <div>
               <MapPin size={17} />
-              <span>Rohtak • Offline</span>
+              <span>Rohtak • Webmok Pvt.Ltd.</span>
             </div>
           </div>
 

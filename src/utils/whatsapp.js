@@ -1,70 +1,113 @@
+/**
+ * WhatsApp number ko clean format mein convert karta hai.
+ * Indian 10-digit number ho to automatically 91 add karta hai.
+ */
 export function formatWhatsappNumber(number) {
   const digits = String(number || "").replace(/\D/g, "");
-  if (!digits) return "";
-  if (digits.length === 10) return `91${digits}`;
+
+  if (!digits) {
+    return "";
+  }
+
+  if (digits.length === 10) {
+    return `91${digits}`;
+  }
+
   return digits;
 }
 
+/**
+ * Fixed WhatsApp number ki chat direct open karta hai.
+ *
+ * navigator.share use nahi hota, isliye app ya contact
+ * selection panel open nahi hoga.
+ */
 export function openWhatsAppMessage(number, message) {
   const phone = formatWhatsappNumber(number);
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
+
+  if (!phone) {
+    throw new Error("WhatsApp number missing hai.");
+  }
+
+  const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
+    message
+  )}`;
+
+  /*
+   * Same tab redirect mobile par WhatsApp application aur
+   * desktop par WhatsApp Web ki fixed chat open karega.
+   */
+  window.location.href = whatsappUrl;
+
+  return {
+    mode: "message",
+    phone,
+  };
 }
 
-export function buildInquiryMessage(values, eventTitle, eventDate) {
+/**
+ * Normal enquiry form ka WhatsApp message.
+ */
+export function buildInquiryMessage(
+  values,
+  eventTitle,
+  eventDate
+) {
   return [
     "Hello Webmok Team,",
     "",
     `I want to enquire for: ${eventTitle}`,
     `Event Date: ${eventDate}`,
     "",
-    `Name: ${values.name}`,
-    `Phone: ${values.phone}`,
+    `Name: ${values.name || "Not provided"}`,
+    `Phone: ${values.phone || "Not provided"}`,
     `Email: ${values.email || "Not provided"}`,
-    `City: ${values.city}`,
-    `Profile: ${values.profile}`,
-    `Goal: ${values.goal}`,
+    `City: ${values.city || "Not provided"}`,
+    `Profile: ${values.profile || "Not provided"}`,
+    `Goal: ${values.goal || "Not provided"}`,
   ].join("\n");
 }
 
-export function buildPaidRegistrationMessage(values, eventData) {
+/**
+ * Paid registration form ka WhatsApp message.
+ * Payment screenshot field completely remove kar diya gaya hai.
+ */
+export function buildPaidRegistrationMessage(
+  values,
+  eventData
+) {
   return [
     "Hello Webmok Team,",
     "",
-    `I have completed paid registration for: ${eventData.title}`,
-    `Event Date: ${eventData.date}`,
-    `Amount: ₹${eventData.fee}`,
+    "*PAID REGISTRATION DETAILS*",
     "",
-    `Name: ${values.name}`,
-    `Phone: ${values.phone}`,
+    `Event: ${eventData.title}`,
+    `Event Date: ${eventData.date}`,
+    `Registration Amount: ₹${eventData.fee}`,
+    "",
+    `Name: ${values.name || "Not provided"}`,
+    `Phone: ${values.phone || "Not provided"}`,
     `Email: ${values.email || "Not provided"}`,
-    `City: ${values.city}`,
-    `Profile: ${values.profile}`,
-    `Payment Mode: ${values.paymentMode}`,
-    `Transaction ID: ${values.transactionId || "Not provided"}`,
-    `Screenshot Attached: ${values.paymentScreenshot ? values.paymentScreenshot.name : "No"}`,
-    `Notes: ${values.note || "NA"}`,
+    `City: ${values.city || "Not provided"}`,
+    `Profile: ${values.profile || "Not provided"}`,
+    `Payment Mode: ${values.paymentMode || "Not provided"}`,
+    `Transaction / UTR ID: ${
+      values.transactionId || "Not provided"
+    }`,
+    `Additional Notes: ${values.note || "NA"}`,
+    "",
+    "I have completed the payment. Please verify my Transaction/UTR ID and confirm my seat.",
   ].join("\n");
 }
 
-export async function shareToWhatsAppWithOptionalFile(number, message, file) {
-  const phone = formatWhatsappNumber(number);
-
-  if (file && navigator.share && navigator.canShare) {
-    try {
-      const shareData = { text: message, files: [file], title: "Webmok Paid Registration" };
-      if (navigator.canShare(shareData)) {
-        await navigator.share(shareData);
-        return { mode: "share" };
-      }
-    } catch (error) {
-      if (error?.name === "AbortError") {
-        return { mode: "cancelled" };
-      }
-    }
-  }
-
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank", "noopener,noreferrer");
-  return { mode: file ? "fallback" : "message" };
+/**
+ * Backward compatibility:
+ * Kisi purani file mein ye function imported ho to error nahi aayega.
+ * Ab ye native share panel use nahi karta; fixed WhatsApp chat direct kholta hai.
+ */
+export async function shareToWhatsAppWithOptionalFile(
+  number,
+  message
+) {
+  return openWhatsAppMessage(number, message);
 }

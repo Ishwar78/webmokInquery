@@ -1,39 +1,74 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 :root {
-  --wm-bg: #041226;
-  --wm-bg-2: #071c37;
-  --wm-surface: rgba(8, 25, 48, 0.72);
-  --wm-surface-solid: #0b2344;
-  --wm-surface-soft: #0f315e;
-  --wm-line: rgba(255, 255, 255, 0.1);
-  --wm-line-strong: rgba(86, 196, 236, 0.35);
-  --wm-text: #eff7ff;
-  --wm-text-soft: #b6c8de;
-  --wm-primary: #0d56a0;
-  --wm-primary-2: #1fb6e4;
-  --wm-primary-3: #6fd3ff;
-  --wm-accent: #0a74ff;
-  --wm-white: #ffffff;
-  --wm-success: #53d8a9;
-  --wm-danger: #ff7474;
+  /* ── Core Brand Colors ── */
+  --wm-bg: #020d1a;
+  --wm-bg-2: #061526;
+  --wm-surface: rgba(6, 20, 42, 0.72);
+  --wm-surface-solid: #0a1f3c;
+  --wm-surface-soft: #0d2a52;
+  --wm-line: rgba(255, 255, 255, 0.08);
+  --wm-line-strong: rgba(135, 210, 255, 0.3);
+  --wm-text: #eef7ff;
+  --wm-text-soft: #a8c4de;
 
-  --wm-shadow: 0 24px 80px rgba(1, 10, 23, 0.42);
+  /* ── Brand Palette — sky-blue-forward ── */
+  --wm-primary:   #0a52a8;        /* deep royal blue */
+  --wm-primary-2: #1ab6e8;        /* bright cyan-blue */
+  --wm-primary-3: #72d8ff;        /* light sky-blue highlight */
+  --wm-accent:    #0a6fff;        /* vivid accent */
+  --wm-sky:       #b8e8ff;        /* very light sky */
+  --wm-sky-mid:   #5ec8f5;        /* mid sky */
+  --wm-white:     #ffffff;
+  --wm-success:   #3ddba4;
+  --wm-danger:    #ff6b6b;
 
+  /* ── Section Theme Tokens ── */
+  /* Hero – deep navy + sky-blue aurora */
+  --wm-hero-bg-from:   #030e1e;
+  --wm-hero-bg-to:     #071a36;
+  /* PaidReg – rich cobalt/indigo tint */
+  --wm-paid-bg-from:   #04111f;
+  --wm-paid-bg-to:     #081d3a;
+  /* Course – muted slate-blue */
+  --wm-course-bg-from: #050e1e;
+  --wm-course-bg-to:   #0a1d38;
+  /* RegIntro – deep teal-blue */
+  --wm-reg-bg-from:    #03101f;
+  --wm-reg-bg-to:      #081c38;
+  /* Gallery – richer blue-indigo */
+  --wm-gallery-bg-from:#040d1c;
+  --wm-gallery-bg-to:  #091b38;
+  /* FAQ – subtle cool dark */
+  --wm-faq-bg-from:    #030d1c;
+  --wm-faq-bg-to:      #071830;
+  /* Footer – darkest */
+  --wm-footer-bg:      #020a17;
+
+  /* ── Effects ── */
+  --wm-shadow:    0 24px 80px rgba(0, 8, 20, 0.5);
+  --wm-glow-sm:   0 0 30px rgba(26, 182, 232, 0.18);
+  --wm-glow-md:   0 0 60px rgba(26, 182, 232, 0.22);
+
+  /* ── Radii ── */
   --wm-radius-xl: 30px;
   --wm-radius-lg: 22px;
   --wm-radius-md: 16px;
 
-  /* Full-width layout */
-  --wm-container: 100%;
+  /* ── Layout ── */
+  --wm-container:    100%;
   --wm-page-padding: 24px;
+
+  /* ── Transition ── */
+  --wm-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* ========================================
    GLOBAL RESET
 ======================================== */
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -51,26 +86,11 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(31, 182, 228, 0.09),
-      transparent 22%
-    ),
-    radial-gradient(
-      circle at top right,
-      rgba(13, 86, 160, 0.24),
-      transparent 28%
-    ),
-    linear-gradient(
-      180deg,
-      #051526 0%,
-      #061930 38%,
-      #041223 100%
-    );
+  /* Base bg — sections override this individually */
+  background: var(--wm-bg);
 
   color: var(--wm-text);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -81,33 +101,11 @@ body {
   overflow-x: hidden;
 }
 
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img,
-video,
-iframe {
-  display: block;
-  max-width: 100%;
-}
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+img, video, iframe { display: block; max-width: 100%; }
 
 section {
   position: relative;
@@ -128,10 +126,6 @@ section {
   overflow-x: hidden;
 }
 
-/*
-  Sabhi containers ab complete width lenge.
-  Content ke andar sirf safe left-right padding rahegi.
-*/
 .wm-container {
   width: var(--wm-container);
   max-width: none;
@@ -140,23 +134,37 @@ section {
   padding-right: var(--wm-page-padding);
 }
 
-/* Section complete width */
 .wm-section {
   width: 100%;
   max-width: none;
-  padding: 46px 0;
+  padding: 72px 0;
   margin: 0;
 }
 
-/* Section background bhi complete screen width lega */
+/* Legacy surface class – kept for backwards compat */
 .wm-section-surface {
   width: 100%;
   max-width: none;
+}
+
+/* ========================================
+   SECTION DIVIDERS (decorative waves)
+======================================== */
+
+.wm-section-divider {
+  display: block;
+  width: 100%;
+  height: 2px;
   background: linear-gradient(
-    180deg,
-    rgba(10, 27, 52, 0.32),
-    rgba(6, 18, 35, 0.08)
+    90deg,
+    transparent 0%,
+    rgba(135, 210, 255, 0.22) 30%,
+    rgba(26, 182, 232, 0.45) 50%,
+    rgba(135, 210, 255, 0.22) 70%,
+    transparent 100%
   );
+  border: none;
+  margin: 0;
 }
 
 /* ========================================
@@ -165,16 +173,17 @@ section {
 
 .wm-card {
   background: linear-gradient(
-    180deg,
-    rgba(13, 35, 67, 0.82),
-    rgba(8, 22, 42, 0.9)
+    145deg,
+    rgba(10, 28, 58, 0.88),
+    rgba(5, 16, 34, 0.94)
   );
-
-  border: 1px solid var(--wm-line);
+  border: 1px solid rgba(135, 210, 255, 0.1);
   border-radius: var(--wm-radius-xl);
-  box-shadow: var(--wm-shadow);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    var(--wm-shadow),
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
 }
 
 /* ========================================
@@ -187,17 +196,22 @@ section {
   justify-content: center;
   gap: 8px;
 
-  padding: 10px 16px;
+  padding: 10px 18px;
 
-  border: 1px solid rgba(111, 211, 255, 0.26);
+  border: 1px solid rgba(114, 216, 255, 0.28);
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--wm-white);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 182, 232, 0.1),
+    rgba(10, 82, 168, 0.12)
+  );
+  color: var(--wm-primary-3);
 
-  font-size: 0.83rem;
+  font-size: 0.82rem;
   font-weight: 700;
   line-height: 1.3;
+  letter-spacing: 0.04em;
 }
 
 /* ========================================
@@ -222,33 +236,33 @@ section {
   line-height: 1;
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    opacity 0.25s ease;
+    transform 0.28s var(--wm-ease),
+    box-shadow 0.28s var(--wm-ease),
+    border-color 0.28s ease,
+    background 0.28s ease,
+    opacity 0.28s ease;
 }
 
 .wm-primary-btn {
-  padding: 0 26px;
-
+  padding: 0 28px;
   color: var(--wm-white);
 
   background: linear-gradient(
     135deg,
-    var(--wm-primary),
-    var(--wm-primary-2)
+    #1066c6,
+    #1ab6e8
   );
 
-  box-shadow: 0 14px 30px rgba(16, 109, 196, 0.34);
+  box-shadow:
+    0 14px 34px rgba(16, 102, 198, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset;
 }
 
 .wm-secondary-btn {
   padding: 0 24px;
-
   color: var(--wm-white);
 
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
@@ -263,21 +277,24 @@ section {
 .wm-primary-btn:hover,
 .wm-secondary-btn:hover,
 .wm-link-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .wm-primary-btn:hover {
-  box-shadow: 0 18px 38px rgba(16, 109, 196, 0.42);
+  box-shadow:
+    0 20px 44px rgba(16, 102, 198, 0.52),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
 .wm-secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(111, 211, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(114, 216, 255, 0.32);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .wm-primary-btn:disabled,
 .wm-secondary-btn:disabled {
-  opacity: 0.72;
+  opacity: 0.68;
   cursor: not-allowed;
   transform: none;
 }
@@ -288,6 +305,21 @@ section {
 
 .wm-mobile-sticky-cta {
   display: none;
+}
+
+/* ========================================
+   GRADIENT TEXT UTILITY
+======================================== */
+
+.wm-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--wm-primary-3),
+    var(--wm-primary-2)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* ========================================
@@ -306,7 +338,7 @@ section {
   }
 
   .wm-section {
-    padding: 44px 0;
+    padding: 56px 0;
   }
 }
 
@@ -317,22 +349,22 @@ section {
 @media (max-width: 640px) {
   :root {
     --wm-container: 100%;
-    --wm-page-padding: 12px;
+    --wm-page-padding: 14px;
     --wm-radius-xl: 22px;
     --wm-radius-lg: 18px;
     --wm-radius-md: 14px;
   }
 
   .wm-page-shell {
-    padding-bottom: 76px;
+    padding-bottom: 80px;
   }
 
   .wm-section {
-    padding: 38px 0;
+    padding: 46px 0;
   }
 
   .wm-chip {
-    padding: 9px 13px;
+    padding: 9px 14px;
     font-size: 0.75rem;
   }
 
@@ -358,15 +390,15 @@ section {
     gap: 8px;
 
     min-height: 52px;
-    padding: 0 18px;
+    padding: 0 20px;
 
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
 
     background: linear-gradient(
       135deg,
-      var(--wm-primary),
-      var(--wm-primary-2)
+      #1066c6,
+      #1ab6e8
     );
 
     color: var(--wm-white);
@@ -375,7 +407,9 @@ section {
     font-weight: 800;
     line-height: 1;
 
-    box-shadow: 0 16px 36px rgba(8, 74, 142, 0.34);
+    box-shadow:
+      0 16px 36px rgba(8, 74, 142, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.08) inset;
   }
 }
 
@@ -389,7 +423,7 @@ section {
   }
 
   .wm-section {
-    padding: 34px 0;
+    padding: 36px 0;
   }
 
   .wm-primary-btn,

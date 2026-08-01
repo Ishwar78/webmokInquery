@@ -26,12 +26,12 @@ export const EVENT = {
   venue:
     import.meta.env.VITE_EVENT_VENUE ||
     "Webmok Training Hub, 1st Floor, 129 L, Near Power House, Model Town, Rohtak, Haryana",
-  fee: import.meta.env.VITE_EVENT_FEE || "499",
+  fee: import.meta.env.VITE_EVENT_FEE || "199",
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "917206720647",
   callNumber: import.meta.env.VITE_CALL_NUMBER || "7206720647",
   upiId: import.meta.env.VITE_UPI_ID || "webmok@upi",
   upiPayee: import.meta.env.VITE_UPI_PAYEE || "Web Mok",
-  qrImage: import.meta.env.VITE_QR_IMAGE || "/payment-qr-placeholder.svg",
+  qrImage: import.meta.env.VITE_QR_IMAGE || "assets/webmok-logo.png",
 };
 
 export const marqueeItems = [
@@ -39,7 +39,7 @@ export const marqueeItems = [
   `${EVENT.duration} • ${EVENT.time}`,
   "Limited Offline Seats Available",
   "Live Practical Demo + Real Strategies",
-  "Rohtak Venue • Expert Mentors",
+  "Rohtak Webmok Pvt.Ltd. Venue • Expert Mentors",
   `Helpline: ${EVENT.callNumber}`,
 ];
 

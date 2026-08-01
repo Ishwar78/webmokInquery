@@ -1,3 +1,30 @@
+/* =========================================
+   COURSE OVERVIEW SECTION
+   Theme: Slate-blue mid-dark + cyan shimmer
+========================================= */
+
+/* Section background applied via wm-section-surface class in JSX.
+   We add section-specific bg here on the section element itself. */
+#curriculum {
+  background:
+    radial-gradient(
+      ellipse 60% 50% at 95% 5%,
+      rgba(94, 200, 245, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 45% at 5% 95%,
+      rgba(10, 82, 168, 0.16) 0%,
+      transparent 52%
+    ),
+    linear-gradient(
+      165deg,
+      var(--wm-course-bg-from) 0%,
+      #081629 45%,
+      var(--wm-course-bg-to) 100%
+    );
+}
+
 /* =========================================================
    LEARNING CARDS
 ========================================================= */
@@ -6,38 +33,52 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
-  margin-top: 36px;
+  margin-top: 40px;
 }
 
 .wm-learning-card {
-  padding: 24px;
+  padding: 28px 24px;
+  transition:
+    transform 0.3s var(--wm-ease),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.wm-learning-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(114, 216, 255, 0.22);
+  box-shadow:
+    var(--wm-shadow),
+    0 0 40px rgba(26, 182, 232, 0.1);
 }
 
 .wm-learning-card__icon {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   display: grid;
   place-items: center;
   border-radius: 18px;
   background: linear-gradient(
     135deg,
-    rgba(13, 86, 160, 0.28),
-    rgba(31, 182, 228, 0.18)
+    rgba(10, 82, 168, 0.32),
+    rgba(26, 182, 232, 0.22)
   );
+  border: 1px solid rgba(114, 216, 255, 0.16);
   color: var(--wm-primary-3);
+  box-shadow: 0 8px 24px rgba(26, 182, 232, 0.15);
 }
 
 .wm-learning-card h3 {
-  margin: 20px 0 12px;
-  font-size: 1.32rem;
+  margin: 22px 0 12px;
+  font-size: 1.3rem;
+  color: #eef7ff;
 }
 
 .wm-learning-card p {
   margin: 0;
   color: var(--wm-text-soft);
-  line-height: 1.8;
+  line-height: 1.82;
 }
-
 
 /* =========================================================
    AGENDA AND SCHEDULE CONTAINER
@@ -46,26 +87,36 @@
 .wm-agenda-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: 26px;
+  gap: 26px;
+  margin-top: 30px;
 }
 
 .wm-agenda-block,
 .wm-schedule-block,
 .wm-audience-block {
-  padding: 30px;
+  padding: 32px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.wm-agenda-block:hover,
+.wm-schedule-block:hover {
+  border-color: rgba(114, 216, 255, 0.18);
+  box-shadow:
+    var(--wm-shadow),
+    0 0 50px rgba(26, 182, 232, 0.08);
 }
 
 .wm-agenda-block > h3,
 .wm-schedule-block > h3,
 .wm-audience-block h3 {
-  margin: 0 0 22px;
+  margin: 0 0 24px;
   font-size: clamp(1.35rem, 2vw, 1.8rem);
   font-weight: 800;
   color: var(--wm-text);
   line-height: 1.25;
 }
-
 
 /* =========================================================
    WHAT WILL BE COVERED CARDS
@@ -86,19 +137,21 @@
   padding: 24px;
   border-radius: 24px;
 
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(26, 182, 232, 0.04);
+  border: 1px solid rgba(114, 216, 255, 0.1);
 
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease;
+    transform 0.28s var(--wm-ease),
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .wm-agenda-card:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.065);
-  border-color: rgba(86, 196, 236, 0.28);
+  transform: translateY(-4px);
+  background: rgba(26, 182, 232, 0.08);
+  border-color: rgba(114, 216, 255, 0.24);
+  box-shadow: 0 16px 40px rgba(0, 8, 20, 0.3);
 }
 
 .wm-agenda-card__number {
@@ -112,8 +165,8 @@
 
   background: linear-gradient(
     135deg,
-    var(--wm-primary),
-    var(--wm-primary-2)
+    #1066c6,
+    #1ab6e8
   );
 
   color: #ffffff;
@@ -121,12 +174,12 @@
   font-weight: 900;
   line-height: 1;
 
-  box-shadow: 0 12px 26px rgba(31, 182, 228, 0.15);
+  box-shadow:
+    0 12px 28px rgba(26, 182, 232, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
-.wm-agenda-card__content {
-  min-width: 0;
-}
+.wm-agenda-card__content { min-width: 0; }
 
 .wm-agenda-card h4 {
   margin: 3px 0 16px;
@@ -139,11 +192,9 @@
 .wm-agenda-card ul {
   margin: 0;
   padding: 0;
-
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px 22px;
-
   list-style: none;
 }
 
@@ -151,7 +202,6 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-
   color: var(--wm-text-soft);
   font-size: 0.98rem;
   line-height: 1.65;
@@ -163,10 +213,7 @@
   color: var(--wm-primary-3);
 }
 
-.wm-agenda-card li span {
-  min-width: 0;
-}
-
+.wm-agenda-card li span { min-width: 0; }
 
 /* =========================================================
    SESSION BREAKDOWN
@@ -186,19 +233,21 @@
   padding: 24px;
   border-radius: 24px;
 
-  background: rgba(255, 255, 255, 0.045);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(26, 182, 232, 0.04);
+  border: 1px solid rgba(114, 216, 255, 0.1);
 
   transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease;
+    transform 0.28s var(--wm-ease),
+    border-color 0.28s ease,
+    background 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
 .wm-schedule-item:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.065);
-  border-color: rgba(86, 196, 236, 0.28);
+  transform: translateY(-4px);
+  background: rgba(26, 182, 232, 0.08);
+  border-color: rgba(114, 216, 255, 0.24);
+  box-shadow: 0 16px 40px rgba(0, 8, 20, 0.3);
 }
 
 .wm-schedule-item__step {
@@ -210,23 +259,19 @@
 
   border-radius: 20px;
 
-  background: linear-gradient(
-    135deg,
-    var(--wm-primary),
-    var(--wm-primary-2)
-  );
+  background: linear-gradient(135deg, #1066c6, #1ab6e8);
 
   color: #ffffff;
   font-size: 1.15rem;
   font-weight: 900;
   line-height: 1;
 
-  box-shadow: 0 12px 26px rgba(31, 182, 228, 0.15);
+  box-shadow:
+    0 12px 28px rgba(26, 182, 232, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
-.wm-schedule-item__content {
-  min-width: 0;
-}
+.wm-schedule-item__content { min-width: 0; }
 
 .wm-schedule-item h4 {
   margin: 3px 0 10px;
@@ -243,7 +288,6 @@
   line-height: 1.8;
 }
 
-
 /* =========================================================
    AUDIENCE SECTION
 ========================================================= */
@@ -254,19 +298,17 @@
     minmax(0, 0.85fr)
     minmax(0, 1.15fr);
 
-  gap: 30px;
+  gap: 32px;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 26px;
 }
 
-.wm-audience-block h3 {
-  margin-bottom: 12px;
-}
+.wm-audience-block h3 { margin-bottom: 12px; }
 
 .wm-audience-block p {
   margin: 0;
   color: var(--wm-text-soft);
-  line-height: 1.8;
+  line-height: 1.82;
 }
 
 .wm-audience-list {
@@ -283,11 +325,22 @@
   padding: 14px 16px;
   border-radius: 16px;
 
-  color: #dcecfb;
+  color: #d4ecfa;
   line-height: 1.6;
 
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(26, 182, 232, 0.05);
+  border: 1px solid rgba(114, 216, 255, 0.12);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s var(--wm-ease);
+}
+
+.wm-audience-list__item:hover {
+  background: rgba(26, 182, 232, 0.1);
+  border-color: rgba(114, 216, 255, 0.24);
+  transform: translateY(-2px);
 }
 
 .wm-audience-list__item svg {
@@ -296,42 +349,23 @@
   color: var(--wm-primary-3);
 }
 
-
 /* =========================================================
    TABLET RESPONSIVE
 ========================================================= */
 
 @media (max-width: 1100px) {
-  .wm-learning-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .wm-audience-block {
-    grid-template-columns: 1fr;
-  }
+  .wm-learning-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .wm-audience-block { grid-template-columns: 1fr; }
 }
-
-
-/* =========================================================
-   SMALL TABLET RESPONSIVE
-========================================================= */
 
 @media (max-width: 768px) {
   .wm-agenda-block,
   .wm-schedule-block,
-  .wm-audience-block {
-    padding: 22px;
-  }
+  .wm-audience-block { padding: 24px; }
 
-  .wm-agenda-card ul {
-    grid-template-columns: 1fr;
-  }
-
-  .wm-audience-list {
-    grid-template-columns: 1fr;
-  }
+  .wm-agenda-card ul { grid-template-columns: 1fr; }
+  .wm-audience-list { grid-template-columns: 1fr; }
 }
-
 
 /* =========================================================
    MOBILE RESPONSIVE
@@ -344,13 +378,9 @@
     margin-top: 28px;
   }
 
-  .wm-learning-card {
-    padding: 20px;
-  }
+  .wm-learning-card { padding: 20px; }
 
-  .wm-agenda-grid {
-    gap: 18px;
-  }
+  .wm-agenda-grid { gap: 18px; }
 
   .wm-agenda-block,
   .wm-schedule-block,
@@ -361,10 +391,7 @@
 
   .wm-agenda-block > h3,
   .wm-schedule-block > h3,
-  .wm-audience-block h3 {
-    margin-bottom: 18px;
-    font-size: 1.35rem;
-  }
+  .wm-audience-block h3 { margin-bottom: 18px; font-size: 1.35rem; }
 
   .wm-agenda-card,
   .wm-schedule-item {
@@ -375,44 +402,22 @@
   }
 
   .wm-agenda-card__number,
-  .wm-schedule-item__step {
-    width: 58px;
-    height: 58px;
-    border-radius: 17px;
-    font-size: 1rem;
-  }
+  .wm-schedule-item__step { width: 58px; height: 58px; border-radius: 17px; font-size: 1rem; }
 
   .wm-agenda-card h4,
-  .wm-schedule-item h4 {
-    margin-top: 2px;
-    font-size: 1.05rem;
-  }
+  .wm-schedule-item h4 { margin-top: 2px; font-size: 1.05rem; }
 
   .wm-agenda-card li,
-  .wm-schedule-item p {
-    font-size: 0.93rem;
-  }
+  .wm-schedule-item p { font-size: 0.93rem; }
 }
-
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-========================================================= */
 
 @media (max-width: 430px) {
   .wm-agenda-card,
-  .wm-schedule-item {
-    grid-template-columns: 1fr;
-  }
+  .wm-schedule-item { grid-template-columns: 1fr; }
 
   .wm-agenda-card__number,
-  .wm-schedule-item__step {
-    width: 54px;
-    height: 54px;
-  }
+  .wm-schedule-item__step { width: 54px; height: 54px; }
 
   .wm-agenda-card h4,
-  .wm-schedule-item h4 {
-    margin-top: 0;
-  }
+  .wm-schedule-item h4 { margin-top: 0; }
 }

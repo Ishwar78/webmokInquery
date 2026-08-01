@@ -1,13 +1,110 @@
-.wm-paid-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.94fr) minmax(340px, 1.06fr);
-  gap: 28px;
-  align-items: start;
-  margin-top: 34px;
+/* =========================================
+   PAID REGISTRATION SECTION
+   Theme: Cobalt-Indigo → Sky glow left
+========================================= */
+
+.wm-paid-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  color-scheme: dark;
+
+  /* Section-specific background: richer cobalt-blue */
+  background:
+    radial-gradient(
+      ellipse 65% 55% at 8% 15%,
+      rgba(26, 182, 232, 0.14) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 50% at 92% 80%,
+      rgba(10, 111, 255, 0.14) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 90% 30% at 50% 100%,
+      rgba(10, 52, 100, 0.18) 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      175deg,
+      var(--wm-paid-bg-from) 0%,
+      #071428 40%,
+      var(--wm-paid-bg-to) 100%
+    );
 }
 
+/* Decorative glow blobs */
+.wm-paid-section__glow {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.2;
+  pointer-events: none;
+  animation: wmGlowPulse 6s ease-in-out infinite alternate;
+}
+
+.wm-paid-section__glow--left {
+  top: 40px;
+  left: -200px;
+  width: 440px;
+  height: 440px;
+  background: var(--wm-primary-2);
+  animation-delay: 0s;
+}
+
+.wm-paid-section__glow--right {
+  right: -200px;
+  bottom: 30px;
+  width: 380px;
+  height: 380px;
+  background: var(--wm-accent);
+  animation-delay: -3s;
+}
+
+@keyframes wmGlowPulse {
+  from { opacity: 0.16; transform: scale(1); }
+  to   { opacity: 0.26; transform: scale(1.08); }
+}
+
+/* =========================================
+   MAIN GRID
+========================================= */
+
+.wm-paid-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.94fr)
+    minmax(340px, 1.06fr);
+
+  align-items: start;
+  gap: 30px;
+
+  width: 100%;
+  margin-top: 38px;
+}
+
+.wm-paid-form-wrap {
+  min-width: 0;
+  width: 100%;
+}
+
+/* =========================================
+   PAYMENT INFORMATION CARD
+========================================= */
+
 .wm-paid-info {
-  padding: 18px;
+  width: 100%;
+  min-width: 0;
+  padding: 26px;
+
+  /* Extra border highlight vs global wm-card */
+  border-color: rgba(114, 216, 255, 0.14);
+  box-shadow:
+    var(--wm-shadow),
+    0 0 60px rgba(26, 182, 232, 0.08) inset;
 }
 
 .wm-paid-info__header {
@@ -15,50 +112,88 @@
   gap: 18px;
 }
 
-.wm-paid-info__header span {
+.wm-paid-info__price > span {
   display: inline-flex;
   margin-bottom: 8px;
-  color: var(--wm-primary-3);
+
+  background: linear-gradient(90deg, var(--wm-primary-3), var(--wm-sky-mid));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.wm-paid-info__header h3 {
+.wm-paid-info__price h3 {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   margin: 0;
+  color: var(--wm-white);
   font-size: clamp(2.1rem, 4vw, 2.9rem);
+  font-weight: 900;
+  line-height: 1;
 }
+
+.wm-paid-info__price h3 svg {
+  flex-shrink: 0;
+  color: var(--wm-primary-3);
+}
+
+/* =========================================
+   CONFIRMATION BADGE
+========================================= */
 
 .wm-paid-info__badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+
   width: fit-content;
-  padding: 12px 14px;
+  max-width: 100%;
+
+  padding: 12px 16px;
+
+  border: 1px solid rgba(61, 219, 164, 0.22);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #dff2ff;
+
+  background: rgba(61, 219, 164, 0.07);
+  color: #d8faee;
+
   font-size: 0.88rem;
   font-weight: 700;
+  line-height: 1.5;
 }
+
+.wm-paid-info__badge svg {
+  flex-shrink: 0;
+  color: var(--wm-success);
+}
+
+/* =========================================
+   QR CODE AREA
+========================================= */
 
 .wm-paid-info__qr-wrap {
   display: grid;
-  grid-template-columns: minmax(220px, 250px) 1fr;
-  gap: 20px;
+  grid-template-columns: minmax(210px, 250px) minmax(0, 1fr);
   align-items: center;
-  margin: 22px 0;
+  gap: 22px;
+  margin: 24px 0;
 }
 
 .wm-paid-info__qr-card {
+  width: 100%;
   padding: 16px;
+  border: 1px solid rgba(114, 216, 255, 0.2);
   border-radius: 24px;
-  background: white;
+  background: var(--wm-white);
+  box-shadow:
+    0 18px 50px rgba(0, 8, 20, 0.38),
+    0 0 0 4px rgba(114, 216, 255, 0.06);
 }
 
 .wm-paid-info__qr-card img {
@@ -72,66 +207,256 @@
   gap: 12px;
 }
 
+.wm-paid-info__actions .wm-primary-btn,
+.wm-paid-info__actions .wm-secondary-btn {
+  width: 100%;
+}
+
+/* =========================================
+   PAYMENT META DETAILS
+========================================= */
+
 .wm-paid-info__meta {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
-.wm-paid-info__meta div,
-.wm-paid-info__steps {
+.wm-paid-info__meta > div {
+  min-width: 0;
   padding: 16px;
+  border: 1px solid rgba(114, 216, 255, 0.1);
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(26, 182, 232, 0.05);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.wm-paid-info__meta > div:hover {
+  background: rgba(26, 182, 232, 0.1);
+  border-color: rgba(114, 216, 255, 0.22);
 }
 
 .wm-paid-info__meta small {
   display: block;
-  color: #a8c3de;
-  font-size: 0.76rem;
+  color: #8db4cc;
+  font-size: 0.7rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .wm-paid-info__meta strong {
   display: block;
   margin-top: 10px;
+  color: var(--wm-white);
+  font-size: 0.88rem;
+  font-weight: 700;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
+
+/* =========================================
+   PAYMENT STEPS
+========================================= */
 
 .wm-paid-info__steps {
   margin-top: 18px;
+  padding: 20px;
+  border: 1px solid rgba(114, 216, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(26, 182, 232, 0.04);
 }
 
 .wm-paid-info__steps h4 {
   margin: 0 0 14px;
+  color: var(--wm-white);
   font-size: 1.1rem;
+  font-weight: 800;
 }
 
 .wm-paid-info__steps ol {
   margin: 0;
-  padding-left: 18px;
-  color: #d8e7f5;
+  padding-left: 20px;
+  color: #c8dff0;
+  font-size: 0.9rem;
+  font-weight: 500;
   line-height: 1.9;
 }
 
+.wm-paid-info__steps li { padding-left: 4px; }
+.wm-paid-info__steps li::marker {
+  color: var(--wm-primary-3);
+  font-weight: 800;
+}
+
+.wm-paid-info > .wm-link-btn { margin-top: 10px; }
+
+/* =========================================
+   SELECT DROPDOWN FIX
+========================================= */
+
+#paid-registration select {
+  width: 100%;
+  min-height: 64px;
+
+  padding: 0 48px 0 24px;
+
+  border: 1px solid rgba(114, 216, 255, 0.14);
+  border-radius: 20px;
+
+  background-color: #0e2440 !important;
+  color: #ffffff !important;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+
+  outline: none;
+  cursor: pointer;
+  color-scheme: dark;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#paid-registration select:hover {
+  border-color: rgba(114, 216, 255, 0.36);
+  background-color: #122e52 !important;
+}
+
+#paid-registration select:focus {
+  border-color: var(--wm-primary-2);
+  background-color: #0e2440 !important;
+
+  box-shadow:
+    0 0 0 4px rgba(26, 182, 232, 0.12),
+    0 12px 30px rgba(0, 8, 20, 0.18);
+}
+
+#paid-registration select option,
+#paid-registration select optgroup {
+  background-color: #0b2344 !important;
+  color: #ffffff !important;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+#paid-registration select option:checked {
+  background: linear-gradient(135deg, #0d56a0, #126fd0) !important;
+  background-color: #1267c4 !important;
+  color: #ffffff !important;
+}
+
+#paid-registration select option:disabled {
+  background-color: #0b2344 !important;
+  color: #7599b8 !important;
+}
+
+#paid-registration select,
+#paid-registration select:focus,
+#paid-registration select:active {
+  -webkit-text-fill-color: #ffffff;
+}
+
+/* =========================================
+   INPUT AND TEXTAREA CONSISTENCY
+========================================= */
+
+#paid-registration input:not([type="checkbox"]):not([type="radio"]),
+#paid-registration textarea {
+  background-color: #0e2440;
+  color: #ffffff;
+  border-color: rgba(114, 216, 255, 0.14);
+}
+
+#paid-registration input::placeholder,
+#paid-registration textarea::placeholder {
+  color: #7599b8;
+  opacity: 1;
+}
+
+#paid-registration input:focus,
+#paid-registration textarea:focus {
+  border-color: var(--wm-primary-2);
+
+  box-shadow:
+    0 0 0 4px rgba(26, 182, 232, 0.12),
+    0 12px 30px rgba(0, 8, 20, 0.16);
+
+  outline: none;
+}
+
+#paid-registration input[type="file"] { color: #c2d8ed; }
+
+#paid-registration input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--wm-primary), var(--wm-primary-2));
+  color: var(--wm-white);
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
 @media (max-width: 1080px) {
-  .wm-paid-grid {
-    grid-template-columns: 1fr;
-  }
+  .wm-paid-grid { grid-template-columns: 1fr; }
+  .wm-paid-info__qr-wrap { grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); }
 }
 
 @media (max-width: 740px) {
-  .wm-paid-info__qr-wrap,
-  .wm-paid-info__meta {
-    grid-template-columns: 1fr;
-  }
+  .wm-paid-grid { gap: 22px; margin-top: 28px; }
+  .wm-paid-info__qr-wrap { grid-template-columns: 1fr; }
+  .wm-paid-info__qr-card { width: min(290px, 100%); margin-inline: auto; }
+  .wm-paid-info__meta { grid-template-columns: 1fr; }
 }
 
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
 @media (max-width: 640px) {
-  .wm-paid-info {
-    padding: 20px;
+  .wm-paid-info { padding: 18px; border-radius: 22px; }
+  .wm-paid-info__price h3 { font-size: 2.1rem; }
+  .wm-paid-info__badge { align-items: flex-start; width: 100%; font-size: 0.8rem; }
+  .wm-paid-info__qr-wrap { gap: 16px; margin: 18px 0; }
+  .wm-paid-info__qr-card { padding: 12px; border-radius: 20px; }
+  .wm-paid-info__meta > div,
+  .wm-paid-info__steps { padding: 15px; border-radius: 17px; }
+  .wm-paid-info__steps ol { font-size: 0.82rem; line-height: 1.8; }
+
+  #paid-registration select {
+    min-height: 56px;
+    padding-right: 42px;
+    padding-left: 18px;
+    border-radius: 16px;
+    font-size: 0.94rem;
+  }
+
+  #paid-registration select option,
+  #paid-registration select optgroup { font-size: 0.94rem; }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .wm-paid-info { padding: 15px; }
+  .wm-paid-info__actions .wm-primary-btn,
+  .wm-paid-info__actions .wm-secondary-btn {
+    padding-right: 14px;
+    padding-left: 14px;
+    font-size: 0.82rem;
   }
 }

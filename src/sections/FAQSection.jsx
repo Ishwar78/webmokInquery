@@ -8,13 +8,13 @@ export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="wm-section wm-section-surface" id="faqs">
+    <section className="wm-section wm-section-surface wm-faq-section" id="faqs">
       <div className="wm-container">
         <SectionHeader
           eyebrow="Frequently Asked Questions"
           title="Everything you need before"
           accent="registration"
-          description="Agar user ko payment, session type, screenshot ya eligibility ko लेकर doubt ho, to yeh FAQ section unhe instantly clear guidance deta hai."
+          // description="Agar user ko payment, session type, screenshot ya eligibility ko लेकर doubt ho, to yeh FAQ section unhe instantly clear guidance deta hai."
           align="center"
         />
 

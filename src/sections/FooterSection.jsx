@@ -44,6 +44,9 @@ export default function FooterSection() {
           </div>
         </div>
       </div>
+      <div className="wm-container">
+        <div className="wm-footer__divider" />
+      </div>
       <div className="wm-footer__bottom">© 2026 Web Mok. All rights reserved.</div>
     </footer>
   );

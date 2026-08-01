@@ -1,11 +1,25 @@
+/* ====================================
+   MARQUEE BAR — Sky-Blue Premium Bar
+==================================== */
+
 .wm-marquee {
   position: sticky;
   top: 0;
   z-index: 60;
   overflow: hidden;
   white-space: nowrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(90deg, #0b4f93, #1bb8e5, #0b4f93);
+  border-bottom: 1px solid rgba(114, 216, 255, 0.2);
+
+  background: linear-gradient(
+    90deg,
+    #084c8e 0%,
+    #1190d4 25%,
+    #1ab6e8 50%,
+    #1190d4 75%,
+    #084c8e 100%
+  );
+
+  box-shadow: 0 2px 20px rgba(26, 182, 232, 0.25);
 }
 
 .wm-marquee__track {
@@ -13,7 +27,7 @@
   align-items: center;
   gap: 30px;
   min-width: max-content;
-  padding: 11px 0;
+  padding: 12px 0;
   animation: wmMarqueeScroll 22s linear infinite;
 }
 
@@ -26,28 +40,22 @@
   align-items: center;
   gap: 8px;
   padding-left: 18px;
-  color: #f7fcff;
+  color: #f0faff;
   font-size: 0.84rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+}
+
+.wm-marquee__item svg {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 @keyframes wmMarqueeScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 @media (max-width: 640px) {
-  .wm-marquee__track {
-    gap: 22px;
-    animation-duration: 18s;
-  }
-
-  .wm-marquee__item {
-    font-size: 0.75rem;
-  }
+  .wm-marquee__track { gap: 22px; animation-duration: 18s; }
+  .wm-marquee__item { font-size: 0.75rem; }
 }
