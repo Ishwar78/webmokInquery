@@ -1,0 +1,44 @@
+<svg width="1200" height="860" viewBox="0 0 1200 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="860" rx="34" fill="url(#paint0_linear)"/>
+  <circle cx="995" cy="125" r="110" fill="#7EDFFF" fill-opacity="0.16"/>
+  <circle cx="194" cy="126" r="138" fill="#0F65C4" fill-opacity="0.24"/>
+  <circle cx="1024" cy="725" r="150" fill="#0A4A8B" fill-opacity="0.28"/>
+  <rect x="78" y="86" width="224" height="62" rx="31" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="112" y="126" fill="white" font-size="24" font-family="Montserrat, sans-serif" font-weight="700">22 August • Offline</text>
+  <text x="88" y="240" fill="white" font-size="76" font-family="Montserrat, sans-serif" font-weight="800">Video Editing</text>
+  <text x="88" y="324" fill="#B9F0FF" font-size="76" font-family="Montserrat, sans-serif" font-weight="800">&amp; Digital Marketing</text>
+  <text x="88" y="398" fill="white" font-size="52" font-family="Montserrat, sans-serif" font-weight="700">Masterclass</text>
+  <text x="88" y="460" fill="#D9ECFF" font-size="26" font-family="Montserrat, sans-serif" font-weight="500">Practical skills, AI workflow, live demo,</text>
+  <text x="88" y="496" fill="#D9ECFF" font-size="26" font-family="Montserrat, sans-serif" font-weight="500">creative strategy and content growth roadmap.</text>
+  <rect x="88" y="554" width="284" height="72" rx="24" fill="white" fill-opacity="0.1" stroke="rgba(255,255,255,0.18)"/>
+  <text x="118" y="600" fill="white" font-size="28" font-family="Montserrat, sans-serif" font-weight="700">3 Hour Live Session</text>
+  <rect x="694" y="126" width="392" height="518" rx="34" fill="#05172C" fill-opacity="0.42" stroke="rgba(255,255,255,0.16)"/>
+  <rect x="728" y="172" width="324" height="192" rx="26" fill="url(#paint1_linear)"/>
+  <polygon points="884,232 884,304 940,268" fill="white"/>
+  <rect x="728" y="394" width="152" height="94" rx="20" fill="white" fill-opacity="0.08"/>
+  <text x="760" y="432" fill="#A6DFFF" font-size="20" font-family="Montserrat, sans-serif" font-weight="700">Live Demo</text>
+  <text x="760" y="466" fill="white" font-size="28" font-family="Montserrat, sans-serif" font-weight="800">Practical Flow</text>
+  <rect x="900" y="394" width="152" height="94" rx="20" fill="white" fill-opacity="0.08"/>
+  <text x="932" y="432" fill="#A6DFFF" font-size="20" font-family="Montserrat, sans-serif" font-weight="700">Growth</text>
+  <text x="932" y="466" fill="white" font-size="28" font-family="Montserrat, sans-serif" font-weight="800">Marketing</text>
+  <rect x="728" y="512" width="324" height="98" rx="24" fill="white" fill-opacity="0.08"/>
+  <text x="760" y="552" fill="#A6DFFF" font-size="18" font-family="Montserrat, sans-serif" font-weight="700">Includes</text>
+  <text x="760" y="588" fill="white" font-size="28" font-family="Montserrat, sans-serif" font-weight="700">Video Editing + AI + Digital Strategy</text>
+  <rect x="728" y="672" width="154" height="94" rx="22" fill="white" fill-opacity="0.08"/>
+  <rect x="900" y="672" width="152" height="94" rx="22" fill="white" fill-opacity="0.08"/>
+  <text x="762" y="708" fill="#A6DFFF" font-size="18" font-family="Montserrat, sans-serif" font-weight="700">Mode</text>
+  <text x="762" y="742" fill="white" font-size="26" font-family="Montserrat, sans-serif" font-weight="800">Offline</text>
+  <text x="934" y="708" fill="#A6DFFF" font-size="18" font-family="Montserrat, sans-serif" font-weight="700">Seats</text>
+  <text x="934" y="742" fill="white" font-size="26" font-family="Montserrat, sans-serif" font-weight="800">Limited</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1200" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B4F93"/>
+      <stop offset="0.55" stop-color="#0D66BD"/>
+      <stop offset="1" stop-color="#1BB8E5"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="728" y1="172" x2="1052" y2="364" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E5FAF"/>
+      <stop offset="1" stop-color="#44CEF4"/>
+    </linearGradient>
+  </defs>
+</svg>

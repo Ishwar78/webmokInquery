@@ -1,0 +1,185 @@
+import {
+  BadgeCheck,
+  CalendarDays,
+  Clock3,
+  MapPin,
+  MonitorPlay,
+  Target,
+  WandSparkles,
+  Rocket,
+  Laptop2,
+  Sparkles,
+  Video,
+  Megaphone,
+  PenTool,
+  TrendingUp,
+  Users,
+  ShieldCheck,
+} from "lucide-react";
+
+export const EVENT = {
+  title: "Video Editing & Digital Marketing Masterclass",
+  shortTitle: "Masterclass",
+  date: import.meta.env.VITE_EVENT_DATE || "22 August 2026",
+  time: import.meta.env.VITE_EVENT_TIME || "11:00 AM – 02:00 PM",
+  duration: import.meta.env.VITE_EVENT_DURATION || "3 Hours Offline Session",
+  venue:
+    import.meta.env.VITE_EVENT_VENUE ||
+    "Webmok Training Hub, 1st Floor, 129 L, Near Power House, Model Town, Rohtak, Haryana",
+  fee: import.meta.env.VITE_EVENT_FEE || "499",
+  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "917206720647",
+  callNumber: import.meta.env.VITE_CALL_NUMBER || "7206720647",
+  upiId: import.meta.env.VITE_UPI_ID || "webmok@upi",
+  upiPayee: import.meta.env.VITE_UPI_PAYEE || "Web Mok",
+  qrImage: import.meta.env.VITE_QR_IMAGE || "/payment-qr-placeholder.svg",
+};
+
+export const marqueeItems = [
+  `22 August • ${EVENT.title}`,
+  `${EVENT.duration} • ${EVENT.time}`,
+  "Limited Offline Seats Available",
+  "Live Practical Demo + Real Strategies",
+  "Rohtak Venue • Expert Mentors",
+  `Helpline: ${EVENT.callNumber}`,
+];
+
+export const heroStats = [
+  { label: "Offline Session", value: "03 Hrs" },
+  { label: "Core Tracks", value: "02" },
+  { label: "Seat Type", value: "Limited" },
+];
+
+export const quickHighlights = [
+  { icon: CalendarDays, text: EVENT.date },
+  { icon: Clock3, text: EVENT.time },
+  { icon: MapPin, text: "Rohtak • Offline" },
+  { icon: BadgeCheck, text: "Practical + Premium Experience" },
+];
+
+export const learningPoints = [
+  {
+    icon: MonitorPlay,
+    title: "Editing Workflow",
+    description:
+      "Timeline setup, raw footage sorting, cuts, pacing, captions aur final export workflow.",
+  },
+  {
+    icon: WandSparkles,
+    title: "AI Assisted Creativity",
+    description:
+      "Ideas, scripts, hooks aur productivity ke liye smart AI workflow ka practical use.",
+  },
+  {
+    icon: Target,
+    title: "Marketing Foundations",
+    description:
+      "Digital marketing ka base, content funnel, lead mindset aur audience understanding.",
+  },
+  {
+    icon: Rocket,
+    title: "Growth Thinking",
+    description:
+      "Content ko sirf good-looking nahi, enquiries aur conversions ke liye optimize karna.",
+  },
+  {
+    icon: Laptop2,
+    title: "Live Demo Session",
+    description:
+      "Trainer ke saath live practical देखकर exact process ko samajhna aur note karna.",
+  },
+  {
+    icon: Sparkles,
+    title: "Career Direction",
+    description:
+      "Students, freelancers aur business owners ke liye next-step clarity aur action plan.",
+  },
+];
+
+export const agendaCards = [
+  {
+    icon: Video,
+    title: "Video Editing Mastery",
+    items: [
+      "Professional cut-to-cut editing",
+      "Reels retention strategy",
+      "Audio balancing & captions",
+      "Transitions without over-editing",
+    ],
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing Basics",
+    items: [
+      "Audience targeting fundamentals",
+      "Offer positioning that converts",
+      "Lead-focused content mindset",
+      "Social growth action plan",
+    ],
+  },
+  {
+    icon: PenTool,
+    title: "Creative Execution",
+    items: [
+      "Hooks, scripting & content ideas",
+      "Visual flow and storytelling",
+      "Branding basics for social content",
+      "AI tools to speed up work",
+    ],
+  },
+];
+
+export const schedule = [
+  {
+    step: "01",
+    title: "Creative Setup & Strategy",
+    text: "Content planning, creator mindset, tools setup aur high-retention content ki foundation.",
+  },
+  {
+    step: "02",
+    title: "Live Editing Practical",
+    text: "Real sample footage par edit flow, captions, audio polish aur exporting process.",
+  },
+  {
+    step: "03",
+    title: "Marketing + Growth Plan",
+    text: "Content ko growth aur enquiries se connect karne ka simple, practical roadmap.",
+  },
+];
+
+export const audiencePoints = [
+  "Students jo digital skills seekhna chahte hain",
+  "Freelancers jo client work ko premium banana chahte hain",
+  "Business owners jo apna content khud improve karna chahte hain",
+  "Creators jo reels aur video quality better karna chahte hain",
+  "Beginners jinko zero se start karna hai",
+  "Job professionals jo digital field explore karna chahte hain",
+];
+
+export const perks = [
+  { icon: TrendingUp, title: "Live Practical Learning" },
+  { icon: Users, title: "Expert Mentor Guidance" },
+  { icon: ShieldCheck, title: "Offline Focused Support" },
+];
+
+export const faqs = [
+  {
+    question: "Kya ye masterclass beginners ke liye hai?",
+    answer:
+      "Haan, ye session beginner-friendly hai. Agar aapne pehle editing ya digital marketing properly start nahi ki hai tab bhi aap easily join kar sakte ho.",
+  },
+  {
+    question: "Kya paid registration zaroori hai?",
+    answer:
+      "Haan, limited offline seats ki wajah se paid registration section se seat confirm karna recommended hai. Team verification ke baad final confirmation share karegi.",
+  },
+  {
+    question: "Agar mere paas transaction ID nahi ho to?",
+    answer:
+      "Paid registration form mein transaction ID ya payment screenshot dono mein se kam se kam ek dena zaroori hai.",
+  },
+  {
+    question: "Screenshot WhatsApp par kaise jayega?",
+    answer:
+      "Supported mobile browsers mein share flow se file WhatsApp par share ki ja sakti hai. Desktop ya unsupported browsers mein message open hoga aur aap screenshot manually attach kar sakte ho.",
+  },
+];

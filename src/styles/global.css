@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --wm-bg: #041226;
+  --wm-bg-2: #071c37;
+  --wm-surface: rgba(8, 25, 48, 0.72);
+  --wm-surface-solid: #0b2344;
+  --wm-surface-soft: #0f315e;
+  --wm-line: rgba(255, 255, 255, 0.1);
+  --wm-line-strong: rgba(86, 196, 236, 0.35);
+  --wm-text: #eff7ff;
+  --wm-text-soft: #b6c8de;
+  --wm-primary: #0d56a0;
+  --wm-primary-2: #1fb6e4;
+  --wm-primary-3: #6fd3ff;
+  --wm-accent: #0a74ff;
+  --wm-white: #ffffff;
+  --wm-success: #53d8a9;
+  --wm-danger: #ff7474;
+  --wm-shadow: 0 24px 80px rgba(1, 10, 23, 0.42);
+  --wm-radius-xl: 30px;
+  --wm-radius-lg: 22px;
+  --wm-radius-md: 16px;
+  --wm-container: min(1240px, calc(100% - 40px));
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(31, 182, 228, 0.09), transparent 22%),
+    radial-gradient(circle at top right, rgba(13, 86, 160, 0.24), transparent 28%),
+    linear-gradient(180deg, #051526 0%, #061930 38%, #041223 100%);
+  color: var(--wm-text);
+  font-family: "Montserrat", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  position: relative;
+}
+
+.wm-page-shell {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.wm-container {
+  width: var(--wm-container);
+  margin-inline: auto;
+}
+
+.wm-section {
+  padding: 46px 0;
+}
+
+.wm-section-surface {
+  background: linear-gradient(180deg, rgba(10, 27, 52, 0.32), rgba(6, 18, 35, 0.08));
+}
+
+.wm-card {
+  background: linear-gradient(180deg, rgba(13, 35, 67, 0.82), rgba(8, 22, 42, 0.9));
+  border: 1px solid var(--wm-line);
+  border-radius: var(--wm-radius-xl);
+  box-shadow: var(--wm-shadow);
+  backdrop-filter: blur(18px);
+}
+
+.wm-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(111, 211, 255, 0.26);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--wm-white);
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.wm-primary-btn,
+.wm-secondary-btn,
+.wm-link-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  border-radius: 16px;
+  border: 0;
+  font-size: 0.98rem;
+  font-weight: 800;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.wm-primary-btn {
+  padding: 0 26px;
+  color: var(--wm-white);
+  background: linear-gradient(135deg, var(--wm-primary), var(--wm-primary-2));
+  box-shadow: 0 14px 30px rgba(16, 109, 196, 0.34);
+}
+
+.wm-secondary-btn {
+  padding: 0 24px;
+  color: var(--wm-white);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.wm-link-btn {
+  padding: 0 18px;
+  min-height: 46px;
+  color: var(--wm-primary-3);
+  background: transparent;
+}
+
+.wm-primary-btn:hover,
+.wm-secondary-btn:hover,
+.wm-link-btn:hover {
+  transform: translateY(-2px);
+}
+
+.wm-primary-btn:disabled,
+.wm-secondary-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.wm-mobile-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .wm-section {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --wm-container: min(100% - 24px, 100% - 24px);
+  }
+
+  .wm-mobile-sticky-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 55;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 52px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--wm-primary), var(--wm-primary-2));
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 800;
+    box-shadow: 0 16px 36px rgba(8, 74, 142, 0.34);
+  }
+}

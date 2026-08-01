@@ -1,0 +1,51 @@
+.wm-faq-list {
+  max-width: 920px;
+  margin: 36px auto 0;
+  display: grid;
+  gap: 16px;
+}
+
+.wm-faq-item {
+  padding: 0 24px;
+}
+
+.wm-faq-item__toggle {
+  width: 100%;
+  min-height: 82px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: white;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.wm-faq-item p {
+  margin: 0 0 24px;
+  color: var(--wm-text-soft);
+  line-height: 1.9;
+}
+
+.wm-faq-item.is-open .wm-faq-item__toggle svg {
+  transform: rotate(180deg);
+}
+
+.wm-faq-item__toggle svg {
+  transition: transform 0.24s ease;
+}
+
+@media (max-width: 640px) {
+  .wm-faq-item {
+    padding: 0 18px;
+  }
+
+  .wm-faq-item__toggle {
+    min-height: 72px;
+    font-size: 0.95rem;
+  }
+}

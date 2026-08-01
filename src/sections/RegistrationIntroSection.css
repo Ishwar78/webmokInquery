@@ -1,0 +1,89 @@
+.wm-registration-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.92fr);
+  gap: 34px;
+  align-items: start;
+}
+
+.wm-registration-copy__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.wm-registration-copy__card {
+  padding: 22px 20px;
+  text-align: center;
+}
+
+.wm-registration-copy__icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 14px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(239, 240, 241, 0.26), rgba(31, 182, 228, 0.2));
+  color: var(--wm-primary-3);
+}
+
+.wm-registration-copy__card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.wm-registration-copy__note {
+  margin-top: 24px;
+  padding: 26px;
+}
+
+.wm-registration-copy__note h3 {
+  margin: 0 0 18px;
+  font-size: 1.28rem;
+}
+
+.wm-registration-copy__note ul {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  list-style: none;
+}
+
+.wm-registration-copy__note li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #d4e6f7;
+  line-height: 1.7;
+}
+
+.wm-registration-copy__note li svg {
+  margin-top: 4px;
+  flex: 0 0 auto;
+  color: var(--wm-primary-3);
+}
+
+.wm-registration-copy__cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+@media (max-width: 1080px) {
+  .wm-registration-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .wm-registration-copy__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .wm-registration-copy__note {
+    padding: 20px;
+  }
+}
