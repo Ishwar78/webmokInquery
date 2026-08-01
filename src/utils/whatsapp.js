@@ -37,7 +37,7 @@ export function openWhatsAppMessage(number, message) {
    * Same tab redirect mobile par WhatsApp application aur
    * desktop par WhatsApp Web ki fixed chat open karega.
    */
-  window.location.href = whatsappUrl;
+  window.open(whatsappUrl, "_blank");
 
   return {
     mode: "message",

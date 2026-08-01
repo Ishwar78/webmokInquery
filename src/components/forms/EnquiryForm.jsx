@@ -28,7 +28,7 @@ export default function EnquiryForm() {
     openWhatsAppMessage(EVENT.whatsappNumber, message);
     setStatus({
       type: "success",
-      message: "WhatsApp enquiry open ho gayi hai. Agar app install hai to aap direct message send kar sakte ho.",
+      message: "The WhatsApp enquiry has been opened. If WhatsApp is installed on your device, you can send the message directly",
     });
     setForm(initialState);
   }
@@ -39,8 +39,7 @@ export default function EnquiryForm() {
         <span>Enquiry Form</span>
         <h3>Free Enquiry / Seat Interest</h3>
         <p>
-          Is form se aap interest submit kar sakte ho. Submit karte hi WhatsApp par ready message open ho
-          jayega.
+         Submit this form to express your interest in the masterclass. After submission, a ready-to-send message will automatically open on WhatsApp.
         </p>
       </div>
 

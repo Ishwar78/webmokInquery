@@ -27,8 +27,8 @@ export const EVENT = {
     import.meta.env.VITE_EVENT_VENUE ||
     "Webmok Training Hub, 1st Floor, 129 L, Near Power House, Model Town, Rohtak, Haryana",
   fee: import.meta.env.VITE_EVENT_FEE || "199",
-  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "917206720647",
-  callNumber: import.meta.env.VITE_CALL_NUMBER || "7206720647",
+  whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "917206720663",
+  callNumber: import.meta.env.VITE_CALL_NUMBER || "7206720663",
   upiId: import.meta.env.VITE_UPI_ID || "8684031003@ptsbi",
   upiPayee: import.meta.env.VITE_UPI_PAYEE || "Imt Web Mok Private Limited",
   qrImage: import.meta.env.VITE_QR_IMAGE || "assets/Qrcode.png",
@@ -147,39 +147,39 @@ export const schedule = [
 ];
 
 export const audiencePoints = [
-  "Students jo digital skills seekhna chahte hain",
-  "Freelancers jo client work ko premium banana chahte hain",
-  "Business owners jo apna content khud improve karna chahte hain",
-  "Creators jo reels aur video quality better karna chahte hain",
-  "Beginners jinko zero se start karna hai",
-  "Job professionals jo digital field explore karna chahte hain",
+  "Students who want to learn digital skills",
+  "Freelancers who want to deliver premium-quality work to their clients",
+  "Business owners who want to improve their own content",
+  "Creators who want to improve their reels and video quality",
+  "Beginners who want to start from scratch",
+  "Job professionals who want to explore the digital field",
 ];
 
 export const perks = [
   { icon: TrendingUp, title: "Live Practical Learning" },
   { icon: Users, title: "Expert Mentor Guidance" },
-  { icon: ShieldCheck, title: "Offline Focused Support" },
+  { icon: ShieldCheck, title: "Dedicated Offline Support" },
 ];
 
 export const faqs = [
   {
-    question: "Kya ye masterclass beginners ke liye hai?",
+    question: "Is this masterclass suitable for beginners?",
     answer:
-      "Haan, ye session beginner-friendly hai. Agar aapne pehle editing ya digital marketing properly start nahi ki hai tab bhi aap easily join kar sakte ho.",
+      "Yes, this session is completely beginner-friendly. Even if you have never learned video editing or digital marketing before, you can easily join and follow the session.",
   },
   {
-    question: "Kya paid registration zaroori hai?",
+    question: "Is paid registration required?",
     answer:
-      "Haan, limited offline seats ki wajah se paid registration section se seat confirm karna recommended hai. Team verification ke baad final confirmation share karegi.",
+      "Yes, due to limited offline seats, it is highly recommended to confirm your seat through the paid registration section. Our team will verify your details and share the final confirmation.",
   },
   {
-    question: "Agar mere paas transaction ID nahi ho to?",
+    question: "What should I do if I do not have a Transaction ID?",
     answer:
-      "Paid registration form mein transaction ID ya payment screenshot dono mein se kam se kam ek dena zaroori hai.",
+      "The paid registration form requires you to provide either the Transaction ID or a payment screenshot. At least one of these details must be submitted for payment verification.",
   },
   {
-    question: "Screenshot WhatsApp par kaise jayega?",
+    question: "How will the screenshot be sent to WhatsApp?",
     answer:
-      "Supported mobile browsers mein share flow se file WhatsApp par share ki ja sakti hai. Desktop ya unsupported browsers mein message open hoga aur aap screenshot manually attach kar sakte ho.",
+      "On supported mobile browsers, the payment screenshot can be shared directly through your device’s share option. On desktop computers or unsupported browsers, WhatsApp will open with the prepared message, and you can attach the screenshot manually.",
   },
 ];

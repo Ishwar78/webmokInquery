@@ -37,10 +37,9 @@ export default function HeroSection() {
           </h1>
 
           <p>
-            22 August ko hone wali 3-hour masterclass mein practical
-            workflow, creative thinking aur marketing foundation ko premium
-            experience ke saath seekho. Ye session students, freelancers,
-            creators aur business owners ke liye specially designed hai.
+            Join our 3-hour masterclass on 22 August and learn practical workflows, creative thinking, and essential
+             marketing concepts through a premium learning experience.
+             This session is specially designed for students, freelancers, content creators, and business owners.
           </p>
 
           <div className="wm-hero__highlights">
@@ -113,7 +112,7 @@ export default function HeroSection() {
               // poster="/assets/hero-masterclass-visual.svg"
             >
               <source
-                src="/assets/Video.mp4"
+                src="/assets/Webmok.mp4"
                 type="video/mp4"
               />
 

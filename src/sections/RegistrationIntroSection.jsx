@@ -41,8 +41,7 @@ export default function RegistrationIntroSection() {
                 <CheckCircle2 size={18} />
 
                 <span>
-                  Team aapko masterclass flow aur payment confirmation process
-                  samjhayegi.
+                  Our team will explain the complete masterclass process and payment confirmation procedure.
                 </span>
               </li>
 
@@ -50,8 +49,7 @@ export default function RegistrationIntroSection() {
                 <CheckCircle2 size={18} />
 
                 <span>
-                  Beginner ho ya business owner, aapke profile ke hisaab se
-                  guidance milegi.
+                  Whether you are a beginner or a business owner, you will receive guidance based on your profile and goals.
                 </span>
               </li>
 
@@ -59,8 +57,7 @@ export default function RegistrationIntroSection() {
                 <CheckCircle2 size={18} />
 
                 <span>
-                  Offline seats limited hain, isliye early enquiry recommended
-                  hai.
+                  Offline seats are limited, so submitting an early enquiry is highly recommended.
                 </span>
               </li>
             </ul>

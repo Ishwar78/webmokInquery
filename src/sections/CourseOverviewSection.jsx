@@ -133,10 +133,8 @@ export default function CourseOverviewSection() {
             <h3>Who should attend this masterclass?</h3>
 
             <p>
-              Ye session specially un logon ke liye curated hai jo
-              digital skills ko practical तरीके se seekhna chahte
-              hain aur future growth ke liye ek strong direction
-              lena chahte hain.
+              This session is specially curated for individuals who want to learn practica
+               digital skills and gain clear direction for their future growth.
             </p>
           </div>
 

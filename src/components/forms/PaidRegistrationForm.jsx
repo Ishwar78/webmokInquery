@@ -286,8 +286,7 @@ export default function PaidRegistrationForm() {
           />
 
           <small className="wm-form-field__hint">
-            Payment successful hone ke baad UPI application mein
-            received Transaction ID ya UTR number enter karein.
+           After the payment is successful, enter the Transaction ID or UTR number received in your UPI application.
           </small>
         </div>
       </div>

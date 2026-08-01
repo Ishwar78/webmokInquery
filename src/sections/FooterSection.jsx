@@ -12,8 +12,8 @@ export default function FooterSection() {
         <div className="wm-footer__brand">
           <img src="/assets/webmok-logo.png" alt="Web Mok" />
           <p>
-            Web Mok ke premium masterclass landing page ke through aap enquiry aur paid registration dono ko
-            professional तरीके se manage kar sakte ho.
+           Webmok’s premium masterclass platform provides a seamless and professional experience 
+           for managing enquiries and paid registrations.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export default function FooterSection() {
           </a>
         </div>
 
-        <div className="wm-footer__social">
+        {/* <div className="wm-footer__social">
           <h3>Social Connect</h3>
           <div>
             <a href="#" aria-label="Instagram">
@@ -42,7 +42,7 @@ export default function FooterSection() {
               <FaXTwitter />
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="wm-container">
         <div className="wm-footer__divider" />

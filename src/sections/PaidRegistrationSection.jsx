@@ -120,26 +120,22 @@ export default function PaidRegistrationSection() {
               <h4>How it works</h4>
 
               <ol>
-                <li>UPI ya QR code ke through payment karein.</li>
+                <li>Make the payment through UPI using the QR code.</li>
 
                 <li>
-                  Payment successful hone ke baad Transaction/UTR ID
-                  copy karein.
+                 Once the payment is successful, copy the Transaction ID or UTR number.
                 </li>
 
                 <li>
-                  Registration form mein correct Transaction/UTR ID
-                  enter karein.
+                   Enter the correct Transaction ID or UTR number in the registration form.
                 </li>
 
                 <li>
-                  Form submit karte hi Webmok Team ka WhatsApp direct
-                  open hoga.
+                  After submitting the form, you will be redirected to WhatsApp to contact the Webmok team.
                 </li>
 
                 <li>
-                  WhatsApp par final message send karke seat
-                  confirmation receive karein.
+                  Send the prepared message on WhatsApp to receive your final seat confirmation.
                 </li>
               </ol>
             </div>
