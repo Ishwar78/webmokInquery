@@ -17,30 +17,68 @@
   --wm-white: #ffffff;
   --wm-success: #53d8a9;
   --wm-danger: #ff7474;
+
   --wm-shadow: 0 24px 80px rgba(1, 10, 23, 0.42);
+
   --wm-radius-xl: 30px;
   --wm-radius-lg: 22px;
   --wm-radius-md: 16px;
-  --wm-container: min(1240px, calc(100% - 40px));
+
+  /* Full-width layout */
+  --wm-container: 100%;
+  --wm-page-padding: 24px;
 }
+
+/* ========================================
+   GLOBAL RESET
+======================================== */
 
 * {
   box-sizing: border-box;
 }
 
 html {
+  width: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
   min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+
   background:
-    radial-gradient(circle at top left, rgba(31, 182, 228, 0.09), transparent 22%),
-    radial-gradient(circle at top right, rgba(13, 86, 160, 0.24), transparent 28%),
-    linear-gradient(180deg, #051526 0%, #061930 38%, #041223 100%);
+    radial-gradient(
+      circle at top left,
+      rgba(31, 182, 228, 0.09),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(13, 86, 160, 0.24),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #051526 0%,
+      #061930 38%,
+      #041223 100%
+    );
+
   color: var(--wm-text);
   font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 button,
@@ -60,57 +98,111 @@ a {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
-img {
+img,
+video,
+iframe {
   display: block;
   max-width: 100%;
 }
 
 section {
   position: relative;
+  width: 100%;
+  max-width: none;
 }
+
+/* ========================================
+   PAGE LAYOUT
+======================================== */
 
 .wm-page-shell {
+  width: 100%;
+  max-width: none;
   min-height: 100vh;
-  overflow-x: clip;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
+/*
+  Sabhi containers ab complete width lenge.
+  Content ke andar sirf safe left-right padding rahegi.
+*/
 .wm-container {
   width: var(--wm-container);
-  margin-inline: auto;
+  max-width: none;
+  margin: 0;
+  padding-left: var(--wm-page-padding);
+  padding-right: var(--wm-page-padding);
 }
 
+/* Section complete width */
 .wm-section {
+  width: 100%;
+  max-width: none;
   padding: 46px 0;
+  margin: 0;
 }
 
+/* Section background bhi complete screen width lega */
 .wm-section-surface {
-  background: linear-gradient(180deg, rgba(10, 27, 52, 0.32), rgba(6, 18, 35, 0.08));
+  width: 100%;
+  max-width: none;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 27, 52, 0.32),
+    rgba(6, 18, 35, 0.08)
+  );
 }
+
+/* ========================================
+   CARD
+======================================== */
 
 .wm-card {
-  background: linear-gradient(180deg, rgba(13, 35, 67, 0.82), rgba(8, 22, 42, 0.9));
+  background: linear-gradient(
+    180deg,
+    rgba(13, 35, 67, 0.82),
+    rgba(8, 22, 42, 0.9)
+  );
+
   border: 1px solid var(--wm-line);
   border-radius: var(--wm-radius-xl);
   box-shadow: var(--wm-shadow);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
+
+/* ========================================
+   CHIP
+======================================== */
 
 .wm-chip {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+
   padding: 10px 16px;
-  border-radius: 999px;
+
   border: 1px solid rgba(111, 211, 255, 0.26);
+  border-radius: 999px;
+
   background: rgba(255, 255, 255, 0.05);
   color: var(--wm-white);
+
   font-size: 0.83rem;
   font-weight: 700;
+  line-height: 1.3;
 }
+
+/* ========================================
+   BUTTONS
+======================================== */
 
 .wm-primary-btn,
 .wm-secondary-btn,
@@ -119,31 +211,51 @@ section {
   align-items: center;
   justify-content: center;
   gap: 10px;
+
   min-height: 54px;
-  border-radius: 16px;
+
   border: 0;
+  border-radius: 16px;
+
   font-size: 0.98rem;
   font-weight: 800;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  line-height: 1;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .wm-primary-btn {
   padding: 0 26px;
+
   color: var(--wm-white);
-  background: linear-gradient(135deg, var(--wm-primary), var(--wm-primary-2));
+
+  background: linear-gradient(
+    135deg,
+    var(--wm-primary),
+    var(--wm-primary-2)
+  );
+
   box-shadow: 0 14px 30px rgba(16, 109, 196, 0.34);
 }
 
 .wm-secondary-btn {
   padding: 0 24px;
+
   color: var(--wm-white);
+
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .wm-link-btn {
-  padding: 0 18px;
   min-height: 46px;
+  padding: 0 18px;
+
   color: var(--wm-primary-3);
   background: transparent;
 }
@@ -154,6 +266,15 @@ section {
   transform: translateY(-2px);
 }
 
+.wm-primary-btn:hover {
+  box-shadow: 0 18px 38px rgba(16, 109, 196, 0.42);
+}
+
+.wm-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(111, 211, 255, 0.3);
+}
+
 .wm-primary-btn:disabled,
 .wm-secondary-btn:disabled {
   opacity: 0.72;
@@ -161,19 +282,67 @@ section {
   transform: none;
 }
 
+/* ========================================
+   MOBILE STICKY CTA
+======================================== */
+
 .wm-mobile-sticky-cta {
   display: none;
 }
 
-@media (max-width: 900px) {
-  .wm-section {
-    padding: 48px 0;
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  :root {
+    --wm-page-padding: 20px;
   }
 }
 
+@media (max-width: 900px) {
+  :root {
+    --wm-page-padding: 18px;
+  }
+
+  .wm-section {
+    padding: 44px 0;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 640px) {
   :root {
-    --wm-container: min(100% - 24px, 100% - 24px);
+    --wm-container: 100%;
+    --wm-page-padding: 12px;
+    --wm-radius-xl: 22px;
+    --wm-radius-lg: 18px;
+    --wm-radius-md: 14px;
+  }
+
+  .wm-page-shell {
+    padding-bottom: 76px;
+  }
+
+  .wm-section {
+    padding: 38px 0;
+  }
+
+  .wm-chip {
+    padding: 9px 13px;
+    font-size: 0.75rem;
+  }
+
+  .wm-primary-btn,
+  .wm-secondary-btn {
+    min-height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 14px;
+    font-size: 0.9rem;
   }
 
   .wm-mobile-sticky-cta {
@@ -181,16 +350,50 @@ section {
     left: 12px;
     right: 12px;
     bottom: 12px;
-    z-index: 55;
+    z-index: 999;
+
     display: inline-flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
+
     min-height: 52px;
+    padding: 0 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
-    background: linear-gradient(135deg, var(--wm-primary), var(--wm-primary-2));
-    color: white;
+
+    background: linear-gradient(
+      135deg,
+      var(--wm-primary),
+      var(--wm-primary-2)
+    );
+
+    color: var(--wm-white);
+
     font-size: 0.95rem;
     font-weight: 800;
+    line-height: 1;
+
     box-shadow: 0 16px 36px rgba(8, 74, 142, 0.34);
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  :root {
+    --wm-page-padding: 10px;
+  }
+
+  .wm-section {
+    padding: 34px 0;
+  }
+
+  .wm-primary-btn,
+  .wm-secondary-btn {
+    width: 100%;
   }
 }
