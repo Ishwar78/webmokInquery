@@ -21,7 +21,7 @@ export const EVENT = {
   title: "Video Editing & Digital Marketing Masterclass",
   shortTitle: "Masterclass",
   date: import.meta.env.VITE_EVENT_DATE || "22 August 2026",
-  time: import.meta.env.VITE_EVENT_TIME || "11:00 AM – 02:00 PM",
+  time: import.meta.env.VITE_EVENT_TIME || "10:00 AM – 01:00 PM",
   duration: import.meta.env.VITE_EVENT_DURATION || "3 Hours Offline Session",
   venue:
     import.meta.env.VITE_EVENT_VENUE ||
@@ -29,9 +29,9 @@ export const EVENT = {
   fee: import.meta.env.VITE_EVENT_FEE || "199",
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER || "917206720647",
   callNumber: import.meta.env.VITE_CALL_NUMBER || "7206720647",
-  upiId: import.meta.env.VITE_UPI_ID || "webmok@upi",
-  upiPayee: import.meta.env.VITE_UPI_PAYEE || "Web Mok",
-  qrImage: import.meta.env.VITE_QR_IMAGE || "assets/webmok-logo.png",
+  upiId: import.meta.env.VITE_UPI_ID || "8684031003@ptsbi",
+  upiPayee: import.meta.env.VITE_UPI_PAYEE || "Imt Web Mok Private Limited",
+  qrImage: import.meta.env.VITE_QR_IMAGE || "assets/Qrcode.png",
 };
 
 export const marqueeItems = [
@@ -57,42 +57,42 @@ export const quickHighlights = [
 ];
 
 export const learningPoints = [
-  {
-    icon: MonitorPlay,
-    title: "Editing Workflow",
-    description:
-      "Timeline setup, raw footage sorting, cuts, pacing, captions aur final export workflow.",
-  },
-  {
-    icon: WandSparkles,
-    title: "AI Assisted Creativity",
-    description:
-      "Ideas, scripts, hooks aur productivity ke liye smart AI workflow ka practical use.",
-  },
-  {
-    icon: Target,
-    title: "Marketing Foundations",
-    description:
-      "Digital marketing ka base, content funnel, lead mindset aur audience understanding.",
-  },
-  {
-    icon: Rocket,
-    title: "Growth Thinking",
-    description:
-      "Content ko sirf good-looking nahi, enquiries aur conversions ke liye optimize karna.",
-  },
-  {
-    icon: Laptop2,
-    title: "Live Demo Session",
-    description:
-      "Trainer ke saath live practical देखकर exact process ko samajhna aur note karna.",
-  },
-  {
-    icon: Sparkles,
-    title: "Career Direction",
-    description:
-      "Students, freelancers aur business owners ke liye next-step clarity aur action plan.",
-  },
+  // {
+  //   icon: MonitorPlay,
+  //   title: "Editing Workflow",
+  //   description:
+  //     "Timeline setup, raw footage sorting, cuts, pacing, captions aur final export workflow.",
+  // },
+  // {
+  //   icon: WandSparkles,
+  //   title: "AI Assisted Creativity",
+  //   description:
+  //     "Ideas, scripts, hooks aur productivity ke liye smart AI workflow ka practical use.",
+  // },
+  // {
+  //   icon: Target,
+  //   title: "Marketing Foundations",
+  //   description:
+  //     "Digital marketing ka base, content funnel, lead mindset aur audience understanding.",
+  // },
+  // {
+  //   icon: Rocket,
+  //   title: "Growth Thinking",
+  //   description:
+  //     "Content ko sirf good-looking nahi, enquiries aur conversions ke liye optimize karna.",
+  // },
+  // {
+  //   icon: Laptop2,
+  //   title: "Live Demo Session",
+  //   description:
+  //     "Trainer ke saath live practical देखकर exact process ko samajhna aur note karna.",
+  // },
+  // {
+  //   icon: Sparkles,
+  //   title: "Career Direction",
+  //   description:
+  //     "Students, freelancers aur business owners ke liye next-step clarity aur action plan.",
+  // },
 ];
 
 export const agendaCards = [
@@ -102,7 +102,7 @@ export const agendaCards = [
     items: [
       "Professional cut-to-cut editing",
       "Reels retention strategy",
-      "Audio balancing & captions",
+      
       "Transitions without over-editing",
     ],
   },
@@ -112,7 +112,7 @@ export const agendaCards = [
     items: [
       "Audience targeting fundamentals",
       "Offer positioning that converts",
-      "Lead-focused content mindset",
+      
       "Social growth action plan",
     ],
   },
@@ -121,7 +121,7 @@ export const agendaCards = [
     title: "Creative Execution",
     items: [
       "Hooks, scripting & content ideas",
-      "Visual flow and storytelling",
+    
       "Branding basics for social content",
       "AI tools to speed up work",
     ],

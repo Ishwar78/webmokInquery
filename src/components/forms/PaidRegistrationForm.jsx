@@ -142,10 +142,10 @@ export default function PaidRegistrationForm() {
 
         <h3>Confirm Your Paid Seat</h3>
 
-        <p>
+        {/* <p>
           QR/UPI se payment karke neeche details submit karo.
           Transaction/UTR ID mandatory hai.
-        </p>
+        </p> */}
       </div>
 
       <div className="wm-form-grid">
@@ -310,16 +310,16 @@ export default function PaidRegistrationForm() {
         />
       </div>
 
-      <div className="wm-form-note">
+      {/* <div className="wm-form-note">
         <TriangleAlert size={18} />
 
-        {/* <div>
+        <div>
           <strong>Important:</strong> Transaction/UTR ID mandatory
           hai. Submit karte hi Webmok Team ka fixed WhatsApp number
           direct open hoga aur registration details message mein
           automatically filled hongi.
-        </div> */}
-      </div>
+        </div>
+      </div> */}
 
       <button
         className="wm-primary-btn wm-form-submit"

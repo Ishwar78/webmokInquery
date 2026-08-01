@@ -7,6 +7,7 @@ import PaidRegistrationSection from "./sections/PaidRegistrationSection";
 import GallerySection from "./sections/GallerySection";
 import FAQSection from "./sections/FAQSection";
 import FooterSection from "./sections/FooterSection";
+import EnquiryPopup from "./components/forms/EnquiryPopup";
 
 function SectionDivider() {
   return (
@@ -23,26 +24,31 @@ function SectionDivider() {
 
 export default function App() {
   return (
-    <div className="wm-page-shell">
-      <MarqueeBar />
-      <Navbar />
-      <main>
-        <HeroSection />
-        <SectionDivider />
-        <PaidRegistrationSection />
-        <SectionDivider />
-        <CourseOverviewSection />
-        <SectionDivider />
-        <RegistrationIntroSection />
-        <SectionDivider />
-        <GallerySection />
-        <SectionDivider />
-        <FAQSection />
-      </main>
-      <FooterSection />
-      <a className="wm-mobile-sticky-cta" href="#paid-registration">
-        Confirm Paid Registration
-      </a>
-    </div>
+    <>
+      <div className="wm-page-shell">
+        <MarqueeBar />
+        <Navbar />
+        <main>
+          <HeroSection />
+          <SectionDivider />
+          <PaidRegistrationSection />
+          <SectionDivider />
+          <CourseOverviewSection />
+          <SectionDivider />
+          <RegistrationIntroSection />
+          <SectionDivider />
+          <GallerySection />
+          <SectionDivider />
+          <FAQSection />
+        </main>
+        <FooterSection />
+        <a className="wm-mobile-sticky-cta" href="#paid-registration">
+          Confirm Paid Registration
+        </a>
+      </div>
+
+      {/* Popup — mounts outside the page shell so z-index is always on top */}
+      <EnquiryPopup />
+    </>
   );
 }

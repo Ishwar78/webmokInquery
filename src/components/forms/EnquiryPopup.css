@@ -1,0 +1,253 @@
+/* ============================================
+   ENQUIRY POPUP MODAL
+   Opens on hard refresh — premium sky-blue
+============================================ */
+
+/* ─── Backdrop ─── */
+.wm-popup-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  background: rgba(1, 6, 16, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  animation: wmPopupBackdropIn 0.35s ease forwards;
+}
+
+.wm-popup-backdrop.is-closing {
+  animation: wmPopupBackdropOut 0.3s ease forwards;
+}
+
+/* ─── Modal Box ─── */
+.wm-popup-modal {
+  position: relative;
+  z-index: 9999;
+
+  width: 100%;
+  max-width: 680px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border: 1px solid rgba(114, 216, 255, 0.18);
+  border-radius: 28px;
+
+  background: linear-gradient(
+    150deg,
+    rgba(8, 22, 50, 0.98) 0%,
+    rgba(4, 13, 30, 0.99) 100%
+  );
+
+  box-shadow:
+    0 40px 120px rgba(0, 5, 15, 0.75),
+    0 0 80px rgba(26, 182, 232, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+
+  animation: wmPopupModalIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(114, 216, 255, 0.22) transparent;
+}
+
+.wm-popup-modal::-webkit-scrollbar {
+  width: 5px;
+}
+
+.wm-popup-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wm-popup-modal::-webkit-scrollbar-thumb {
+  background: rgba(114, 216, 255, 0.22);
+  border-radius: 99px;
+}
+
+.wm-popup-backdrop.is-closing .wm-popup-modal {
+  animation: wmPopupModalOut 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Decorative top glow strip ─── */
+.wm-popup-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #1ab6e8 30%,
+    #72d8ff 50%,
+    #1ab6e8 70%,
+    transparent 100%
+  );
+  border-radius: 28px 28px 0 0;
+  opacity: 0.9;
+}
+
+/* ─── Top bar ─── */
+.wm-popup-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 20px 24px 0;
+}
+
+.wm-popup-topbar__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 13px;
+
+  border: 1px solid rgba(114, 216, 255, 0.24);
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(26, 182, 232, 0.12),
+    rgba(10, 82, 168, 0.14)
+  );
+
+  color: var(--wm-primary-3);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.wm-popup-topbar__badge svg {
+  flex-shrink: 0;
+}
+
+.wm-popup-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.04);
+  color: #b0c8de;
+
+  transition:
+    background 0.24s ease,
+    border-color 0.24s ease,
+    color 0.24s ease,
+    transform 0.24s ease;
+}
+
+.wm-popup-close:hover {
+  background: rgba(255, 80, 80, 0.14);
+  border-color: rgba(255, 100, 100, 0.32);
+  color: #ffa0a0;
+  transform: rotate(5deg) scale(1.06);
+}
+
+/* ─── Form inside popup ─── */
+.wm-popup-modal .wm-form-card {
+  margin: 0;
+  border: none;
+  border-radius: 0 0 28px 28px;
+  background: transparent;
+  box-shadow: none;
+  padding: 20px 24px 28px;
+}
+
+/* ─── Animations ─── */
+@keyframes wmPopupBackdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes wmPopupBackdropOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes wmPopupModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes wmPopupModalOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.94) translateY(12px);
+  }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 640px) {
+  .wm-popup-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .wm-popup-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 26px 26px 0 0;
+  }
+
+  .wm-popup-modal::before {
+    border-radius: 26px 26px 0 0;
+  }
+
+  .wm-popup-topbar {
+    padding: 18px 18px 0;
+  }
+
+  .wm-popup-modal .wm-form-card {
+    padding: 16px 18px 24px;
+  }
+
+  @keyframes wmPopupModalIn {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes wmPopupModalOut {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+}

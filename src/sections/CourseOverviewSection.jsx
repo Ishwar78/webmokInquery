@@ -19,7 +19,6 @@ export default function CourseOverviewSection() {
           eyebrow="Masterclass Details"
           title="Premium learning flow for"
           accent="real-world results"
-          description="Enquiry form ke baad yeh section course ke exact outcomes, agenda aur target audience ko clear karta hai, taaki user easily decide kar sake."
           align="center"
         />
 
@@ -44,10 +43,22 @@ export default function CourseOverviewSection() {
           })}
         </div>
 
+        {/* Agenda and Session Breakdown */}
         <div className="wm-agenda-grid" id="overview">
-          {/* What Will Be Covered */}
+          {/* Left Side: What Will Be Covered */}
           <div className="wm-agenda-block wm-card">
-            <h3>What will be covered?</h3>
+            <div className="wm-overview-block__heading">
+              <span className="wm-overview-block__label">
+                Complete Agenda
+              </span>
+
+              <h3>What will be covered?</h3>
+
+              <p>
+                Explore all the practical topics included in this
+                premium masterclass.
+              </p>
+            </div>
 
             <div className="wm-agenda-cards">
               {agendaCards.map((card, index) => (
@@ -65,7 +76,8 @@ export default function CourseOverviewSection() {
                     <ul>
                       {card.items.map((item) => (
                         <li key={item}>
-                          <CheckCircle2 size={17} />
+                          <CheckCircle2 size={16} />
+
                           <span>{item}</span>
                         </li>
                       ))}
@@ -76,13 +88,24 @@ export default function CourseOverviewSection() {
             </div>
           </div>
 
-          {/* Session Breakdown */}
+          {/* Right Side: Session Breakdown */}
           <div className="wm-schedule-block wm-card">
-            <h3>3-Hour Session Breakdown</h3>
+            <div className="wm-overview-block__heading">
+              <span className="wm-overview-block__label">
+                Session Timeline
+              </span>
+
+              <h3>3-Hour Session Breakdown</h3>
+
+              <p>
+                A focused three-hour learning journey designed for
+                maximum practical value.
+              </p>
+            </div>
 
             <div className="wm-schedule-list">
               {schedule.map((item) => (
-                <div
+                <article
                   className="wm-schedule-item"
                   key={item.step}
                 >
@@ -94,7 +117,7 @@ export default function CourseOverviewSection() {
                     <h4>{item.title}</h4>
                     <p>{item.text}</p>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
@@ -102,7 +125,11 @@ export default function CourseOverviewSection() {
 
         {/* Audience Section */}
         <div className="wm-audience-block wm-card">
-          <div>
+          <div className="wm-audience-block__content">
+            <span className="wm-overview-block__label">
+              Perfect For You
+            </span>
+
             <h3>Who should attend this masterclass?</h3>
 
             <p>
