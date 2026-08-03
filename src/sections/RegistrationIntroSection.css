@@ -1,385 +1,1428 @@
-/* =========================================
-   REGISTRATION INTRO SECTION
-   Theme: Deep Teal-Blue + Right sky aurora
-========================================= */
+/* =========================================================
+   PREMIUM REGISTRATION INTRO SECTION
+   Light Sky Blue Background + Premium Navy Form
+========================================================= */
 
 .wm-registration-section {
   position: relative;
+  isolation: isolate;
   width: 100%;
   overflow: hidden;
-  isolation: isolate;
-  color-scheme: dark;
 
-  /* Section-specific background — teal-blue shift */
+  padding-top: clamp(48px, 6vw, 85px);
+  padding-bottom: clamp(48px, 6vw, 85px);
+
   background:
     radial-gradient(
-      ellipse 55% 65% at 100% 20%,
-      rgba(94, 200, 245, 0.12) 0%,
-      transparent 50%
+      circle at 8% 15%,
+      rgba(38, 170, 255, 0.15),
+      transparent 28%
     ),
     radial-gradient(
-      ellipse 60% 50% at 0% 85%,
-      rgba(10, 111, 255, 0.12) 0%,
-      transparent 55%
+      circle at 93% 24%,
+      rgba(75, 212, 255, 0.18),
+      transparent 27%
     ),
     radial-gradient(
-      ellipse 70% 30% at 50% 0%,
-      rgba(10, 52, 100, 0.1) 0%,
-      transparent 55%
+      circle at 70% 95%,
+      rgba(75, 112, 255, 0.09),
+      transparent 30%
     ),
     linear-gradient(
-      170deg,
-      var(--wm-reg-bg-from) 0%,
-    #e9ebed 30%,
-      var(--wm-reg-bg-to) 100%
+      145deg,
+      #f8fcff 0%,
+      #eef8ff 40%,
+      #e7f4ff 70%,
+      #f8fcff 100%
     );
 }
 
-.wm-registration-section__glow {
+.wm-registration-section::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 94, 155, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(17, 94, 155, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 58px 58px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 16%,
+    #000 84%,
+    transparent
+  );
+}
+
+.wm-registration-section::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+
+  width: min(850px, 90%);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(24, 154, 225, 0.55),
+    transparent
+  );
+
+  box-shadow: 0 0 28px rgba(24, 154, 225, 0.2);
+}
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+
+.wm-registration-section__shape {
   position: absolute;
   z-index: -1;
-  width: 380px;
-  height: 380px;
+
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.18;
   pointer-events: none;
-  animation: wmGlowPulse 7s ease-in-out infinite alternate;
+
+  filter: blur(6px);
 }
 
-.wm-registration-section__glow--left {
-  top: 50px;
-  left: -200px;
-  background: var(--wm-primary-2);
-  animation-delay: -2s;
+.wm-registration-section__shape--one {
+  top: 100px;
+  left: -190px;
+
+  width: 410px;
+  height: 410px;
+
+  background: radial-gradient(
+    circle,
+    rgba(26, 155, 241, 0.15),
+    transparent 69%
+  );
 }
 
-.wm-registration-section__glow--right {
+.wm-registration-section__shape--two {
   right: -200px;
-  bottom: 30px;
-  background: var(--wm-accent);
-  animation-delay: 0s;
+  bottom: 20px;
+
+  width: 440px;
+  height: 440px;
+
+  background: radial-gradient(
+    circle,
+    rgba(58, 113, 240, 0.12),
+    transparent 69%
+  );
 }
 
-/* =========================================
+.wm-registration-section__dots {
+  position: absolute;
+  top: 190px;
+  right: 4%;
+  z-index: -1;
+
+  width: 180px;
+  height: 180px;
+
+  opacity: 0.23;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(16, 120, 190, 0.7) 1.2px,
+    transparent 1.2px
+  );
+
+  background-size: 18px 18px;
+
+  mask-image: radial-gradient(
+    circle,
+    #000,
+    transparent 72%
+  );
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.wm-registration-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.wm-registration-heading {
+  max-width: 790px;
+
+  margin: 0 auto 48px;
+
+  text-align: center;
+}
+
+.wm-registration-heading__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-bottom: 16px;
+  padding: 9px 15px;
+
+  color: #087dbf;
+
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(23, 143, 209, 0.16);
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 30px rgba(30, 110, 160, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.wm-registration-heading__eyebrow svg {
+  color: #159fdc;
+}
+
+.wm-registration-heading h2 {
+  margin: 0;
+
+  color: #071d35;
+
+  font-size: clamp(2rem, 4vw, 3.55rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.wm-registration-heading h2 span {
+  color: transparent;
+
+  background: linear-gradient(
+    90deg,
+    #078ed0,
+    #1875d1,
+    #395cd5
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.wm-registration-heading p {
+  max-width: 670px;
+
+  margin: 18px auto 0;
+
+  color: #61778b;
+
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
    MAIN GRID
-========================================= */
+========================================================= */
 
 .wm-registration-grid {
   display: grid;
   grid-template-columns:
-    minmax(0, 0.95fr)
-    minmax(340px, 0.92fr);
+    minmax(0, 0.94fr)
+    minmax(390px, 1.06fr);
 
   align-items: start;
-  gap: 38px;
+  gap: clamp(28px, 4vw, 52px);
+
   width: 100%;
 }
 
 .wm-registration-copy,
+.wm-registration-form-column,
 .wm-registration-form-wrap {
   width: 100%;
   min-width: 0;
 }
 
-/* =========================================
+/* =========================================================
    PERKS CARDS
-========================================= */
+========================================================= */
 
 .wm-registration-copy__cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 28px;
+  gap: 14px;
 }
 
 .wm-registration-copy__card {
+  position: relative;
+
   min-width: 0;
-  padding: 24px 20px;
-  text-align: center;
+  min-height: 175px;
+
+  padding: 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(244, 251, 255, 0.9)
+    );
+
+  border: 1px solid rgba(28, 132, 194, 0.12);
+  border-radius: 23px;
+
+  box-shadow:
+    0 18px 45px rgba(27, 97, 145, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
   transition:
-    transform 0.3s var(--wm-ease),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.32s ease,
+    box-shadow 0.32s ease;
+}
+
+.wm-registration-copy__card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 22px;
+  right: 22px;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(23, 155, 219, 0.65),
+    transparent
+  );
 }
 
 .wm-registration-copy__card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(114, 216, 255, 0.24);
+  transform: translateY(-7px);
+
+  border-color: rgba(23, 147, 211, 0.24);
+
   box-shadow:
-    var(--wm-shadow),
-    0 0 40px rgba(26, 182, 232, 0.1);
-  background: linear-gradient(
-    145deg,
-    rgba(10, 28, 68, 0.92),
-    rgba(5, 16, 40, 0.96)
-  );
+    0 25px 60px rgba(23, 100, 153, 0.16),
+    0 0 35px rgba(37, 167, 229, 0.08);
+}
+
+.wm-registration-copy__card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .wm-registration-copy__icon {
+  width: 53px;
+  height: 53px;
+
   display: grid;
   place-items: center;
 
-  width: 54px;
-  height: 54px;
-
-  margin: 0 auto 16px;
-
-  border: 1px solid rgba(114, 216, 255, 0.18);
-  border-radius: 18px;
+  color: #ffffff;
 
   background: linear-gradient(
-    135deg,
-    rgba(10, 82, 168, 0.28),
-    rgba(26, 182, 232, 0.22)
+    145deg,
+    #20b9ec,
+    #1765ca
   );
 
-  color: var(--wm-primary-3);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 17px;
 
-  box-shadow: 0 10px 28px rgba(26, 182, 232, 0.18);
+  box-shadow:
+    0 13px 28px rgba(24, 117, 200, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.wm-registration-copy__number {
+  color: rgba(21, 120, 184, 0.19);
+
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .wm-registration-copy__card h3 {
-  margin: 0;
-  color: var(--wm-white);
-  font-size: 1rem;
-  font-weight: 800;
+  position: relative;
+  z-index: 2;
+
+  margin: 19px 0 0;
+
+  color: #102b43;
+
+  font-size: 0.94rem;
+  font-weight: 850;
   line-height: 1.5;
 }
 
-/* =========================================
+.wm-registration-copy__card-glow {
+  position: absolute;
+  right: -50px;
+  bottom: -60px;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(39, 175, 231, 0.12),
+    transparent 69%
+  );
+}
+
+/* =========================================================
    WHY ENQUIRE CARD
-========================================= */
+========================================================= */
 
 .wm-registration-copy__note {
-  margin-top: 24px;
-  padding: 28px;
-  border-color: rgba(114, 216, 255, 0.14);
+  position: relative;
+
+  margin-top: 17px;
+  padding: 27px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(242, 250, 255, 0.94)
+    );
+
+  border: 1px solid rgba(27, 132, 195, 0.13);
+  border-radius: 26px;
+
+  box-shadow:
+    0 23px 60px rgba(25, 96, 144, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.wm-registration-copy__note::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(18, 151, 215, 0.68),
+    transparent
+  );
+}
+
+.wm-registration-copy__note::after {
+  content: "";
+
+  position: absolute;
+  right: -80px;
+  bottom: -100px;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(37, 175, 230, 0.11),
+    transparent 70%
+  );
+}
+
+.wm-registration-copy__note-header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 21px;
+}
+
+.wm-registration-copy__note-icon {
+  flex: 0 0 auto;
+
+  width: 49px;
+  height: 49px;
+
+  display: grid;
+  place-items: center;
+
+  color: #0b91cf;
+
+  background: rgba(25, 157, 217, 0.09);
+  border: 1px solid rgba(25, 148, 207, 0.13);
+  border-radius: 16px;
+}
+
+.wm-registration-copy__note-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #0787c4;
+
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
 .wm-registration-copy__note h3 {
-  margin: 0 0 18px;
-  color: var(--wm-white);
-  font-size: 1.28rem;
-  font-weight: 850;
+  margin: 0;
+
+  color: #102b43;
+
+  font-size: 1.24rem;
+  font-weight: 900;
+  line-height: 1.3;
 }
 
 .wm-registration-copy__note ul {
+  position: relative;
+  z-index: 2;
+
   display: grid;
-  gap: 14px;
+  gap: 12px;
+
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
 .wm-registration-copy__note li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  color: #cce3f5;
-  font-size: 0.92rem;
+  gap: 11px;
+
+  padding: 13px;
+
+  color: #536b7e;
+
+  background: rgba(235, 247, 254, 0.78);
+  border: 1px solid rgba(30, 136, 195, 0.08);
+  border-radius: 16px;
+
+  font-size: 0.88rem;
   font-weight: 500;
-  line-height: 1.72;
+  line-height: 1.65;
 }
 
-.wm-registration-copy__note li svg {
+.wm-registration-copy__check {
   flex: 0 0 auto;
-  margin-top: 4px;
-  color: var(--wm-primary-3);
+
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+  place-items: center;
+
+  margin-top: 1px;
+
+  color: #078fcd;
+
+  background: rgba(25, 157, 217, 0.1);
+  border: 1px solid rgba(25, 148, 207, 0.13);
+  border-radius: 50%;
 }
+
+/* =========================================================
+   CTA BUTTONS
+========================================================= */
 
 .wm-registration-copy__cta-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-top: 22px;
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 11px;
+
+  margin-top: 18px;
 }
 
-/* =========================================
-   SELECT DROPDOWN COMPLETE FIX
-========================================= */
+.wm-registration-call-btn {
+  min-width: 0;
 
-#enquiry-form select {
-  width: 100%;
-  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
 
-  padding: 0 48px 0 22px;
+  padding: 11px 15px;
 
-  border: 1px solid rgba(114, 216, 255, 0.14);
-  border-radius: 20px;
+  color: #12334c;
+  text-decoration: none;
 
-  background-color: #0e2440 !important;
-  color: #ffffff !important;
+  background: #ffffff;
+  border: 1px solid rgba(21, 132, 195, 0.14);
+  border-radius: 17px;
 
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-
-  outline: none;
-  cursor: pointer;
-  color-scheme: dark;
-  -webkit-text-fill-color: #ffffff;
+  box-shadow: 0 10px 26px rgba(31, 102, 148, 0.08);
 
   transition:
+    transform 0.25s ease,
     border-color 0.25s ease,
-    background-color 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-#enquiry-form select:hover {
-  border-color: rgba(114, 216, 255, 0.36);
-  background-color: #122e52 !important;
+.wm-registration-call-btn:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(20, 143, 207, 0.28);
+
+  box-shadow: 0 15px 34px rgba(25, 105, 157, 0.13);
 }
 
-#enquiry-form select:focus {
-  border-color: var(--wm-primary-2);
-  background-color: #0e2440 !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff;
+.wm-registration-call-btn__icon {
+  flex: 0 0 auto;
+
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    145deg,
+    #1eb7eb,
+    #1763c8
+  );
+
+  border-radius: 13px;
+
+  box-shadow: 0 10px 23px rgba(24, 113, 197, 0.25);
+}
+
+.wm-registration-call-btn__text {
+  min-width: 0;
+
+  color: #163750;
+
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.wm-registration-call-btn__text small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #758b9c;
+
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.wm-registration-paid-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 14px 18px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background: linear-gradient(
+    135deg,
+    #1eb9eb,
+    #1766ca 58%,
+    #3157d4
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 17px;
 
   box-shadow:
-    0 0 0 4px rgba(26, 182, 232, 0.12),
-    0 12px 30px rgba(0, 8, 20, 0.18);
+    0 15px 32px rgba(20, 105, 194, 0.29),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+  font-size: 0.8rem;
+  font-weight: 850;
+  white-space: nowrap;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-#enquiry-form select option,
-#enquiry-form select optgroup {
-  background-color: #0b2344 !important;
-  color: #ffffff !important;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  -webkit-text-fill-color: #ffffff;
+.wm-registration-paid-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 20px 42px rgba(20, 105, 194, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-#enquiry-form select option:checked {
-  background-color: #1267c4 !important;
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff;
+.wm-registration-paid-btn svg {
+  transition: transform 0.25s ease;
 }
 
-#enquiry-form select option:disabled {
-  background-color: #0b2344 !important;
-  color: #7599b8 !important;
-  -webkit-text-fill-color: #7599b8;
+.wm-registration-paid-btn:hover svg {
+  transform: translateX(4px);
 }
 
-/* =========================================
-   INPUTS AND TEXTAREA
-========================================= */
+/* =========================================================
+   FORM COLUMN
+========================================================= */
+
+.wm-registration-form-column {
+  position: sticky;
+  top: 105px;
+}
+
+/* =========================================================
+   PREMIUM DARK FORM SHELL
+========================================================= */
+
+.wm-registration-form-shell {
+  position: relative;
+
+  padding: 9px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0c3155,
+      #061a32 58%,
+      #041326
+    );
+
+  border: 1px solid rgba(96, 211, 255, 0.22);
+  border-radius: 32px;
+
+  box-shadow:
+    0 35px 85px rgba(15, 69, 109, 0.24),
+    0 15px 45px rgba(0, 28, 54, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.wm-registration-form-shell::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  padding: 1px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    rgba(112, 224, 255, 0.62),
+    transparent 28%,
+    transparent 68%,
+    rgba(69, 94, 255, 0.28)
+  );
+
+  mask:
+    linear-gradient(#ffffff 0 0) content-box,
+    linear-gradient(#ffffff 0 0);
+
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.wm-registration-form-shell__glow {
+  position: absolute;
+  top: -130px;
+  right: -100px;
+
+  width: 330px;
+  height: 330px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(47, 198, 255, 0.19),
+    transparent 68%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.wm-registration-form-header {
+  position: relative;
+  z-index: 2;
+
+  padding: 25px 25px 20px;
+}
+
+.wm-registration-form-header__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 16px;
+  padding: 7px 11px;
+
+  color: #85e2ff;
+
+  background: rgba(31, 181, 237, 0.1);
+  border: 1px solid rgba(105, 220, 255, 0.14);
+  border-radius: 999px;
+
+  font-size: 0.67rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.wm-registration-form-header h3 {
+  margin: 0;
+
+  color: #f2fbff;
+
+  font-size: clamp(1.55rem, 2.7vw, 2.08rem);
+  font-weight: 900;
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+.wm-registration-form-header p {
+  max-width: 470px;
+
+  margin: 11px 0 0;
+
+  color: #97afc0;
+
+  font-size: 0.89rem;
+  line-height: 1.67;
+}
+
+.wm-registration-form-wrap {
+  position: relative;
+  z-index: 2;
+
+  padding: 5px;
+}
+
+/* =========================================================
+   ENQUIRY FORM INNER CARD
+========================================================= */
+
+.wm-registration-form-wrap > *,
+.wm-registration-form-wrap form,
+.wm-registration-form-wrap .wm-card {
+  width: 100%;
+}
+
+.wm-registration-form-wrap form,
+.wm-registration-form-wrap .wm-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(6, 27, 51, 0.98),
+      rgba(3, 17, 34, 0.98)
+    ) !important;
+
+  border: 1px solid rgba(110, 219, 255, 0.1) !important;
+  border-radius: 24px !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 18px 45px rgba(0, 6, 20, 0.28) !important;
+}
+
+.wm-registration-form-wrap form {
+  padding: 23px !important;
+}
+
+/* =========================================================
+   FORM TEXT
+========================================================= */
+
+#enquiry-form form h2,
+#enquiry-form form h3,
+#enquiry-form .wm-form-title {
+  color: #f1faff !important;
+}
+
+#enquiry-form form p,
+#enquiry-form .wm-form-subtitle {
+  color: #8fa9bb !important;
+}
+
+#enquiry-form label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #c8dce8 !important;
+
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   INPUTS, SELECT AND TEXTAREA
+========================================================= */
 
 #enquiry-form input:not([type="checkbox"]):not([type="radio"]),
+#enquiry-form select,
 #enquiry-form textarea {
-  background-color: #0e2440;
-  color: #ffffff;
-  border-color: rgba(114, 216, 255, 0.14);
+  width: 100%;
+  min-height: 58px;
+
+  padding: 0 17px;
+
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 51, 82, 0.92),
+      rgba(8, 31, 56, 0.96)
+    ) !important;
+
+  border: 1px solid rgba(114, 216, 255, 0.14) !important;
+  border-radius: 16px !important;
+
+  outline: none;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 10px 24px rgba(0, 6, 18, 0.13);
+
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 550;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+#enquiry-form textarea {
+  min-height: 112px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  resize: vertical;
+}
+
+#enquiry-form select {
+  padding-right: 45px;
+
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+#enquiry-form input:hover,
+#enquiry-form select:hover,
+#enquiry-form textarea:hover {
+  border-color: rgba(110, 219, 255, 0.28) !important;
+}
+
+#enquiry-form input:focus,
+#enquiry-form select:focus,
+#enquiry-form textarea:focus {
+  transform: translateY(-1px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 63, 99, 0.98),
+      rgba(9, 37, 65, 0.98)
+    ) !important;
+
+  border-color: #35c5f3 !important;
+
+  box-shadow:
+    0 0 0 4px rgba(40, 190, 245, 0.11),
+    0 14px 34px rgba(0, 8, 22, 0.24);
 }
 
 #enquiry-form input::placeholder,
 #enquiry-form textarea::placeholder {
-  color: #7599b8;
+  color: #708fa5 !important;
   opacity: 1;
 }
 
-#enquiry-form input:focus,
-#enquiry-form textarea:focus {
-  border-color: var(--wm-primary-2);
-  outline: none;
-  box-shadow:
-    0 0 0 4px rgba(26, 182, 232, 0.12),
-    0 12px 30px rgba(0, 8, 20, 0.16);
+#enquiry-form select option,
+#enquiry-form select optgroup {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+
+  background-color: #0b2344 !important;
+
+  font-family: inherit;
+  font-size: 0.92rem;
 }
+
+#enquiry-form select option:checked {
+  color: #ffffff !important;
+  background-color: #1768c7 !important;
+}
+
+#enquiry-form select option:disabled {
+  color: #7898ad !important;
+  background-color: #0b2344 !important;
+}
+
+/* =========================================================
+   AUTOFILL FIX
+========================================================= */
 
 #enquiry-form input:-webkit-autofill,
 #enquiry-form input:-webkit-autofill:hover,
 #enquiry-form input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #ffffff;
-  -webkit-box-shadow: 0 0 0 1000px #0e2440 inset;
+  -webkit-text-fill-color: #ffffff !important;
   caret-color: #ffffff;
+
+  -webkit-box-shadow:
+    0 0 0 1000px #0d2a49 inset,
+    0 0 0 4px rgba(40, 190, 245, 0.08);
+
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 
-@media (max-width: 1080px) {
-  .wm-registration-grid { grid-template-columns: 1fr; }
-  .wm-registration-copy__cards { max-width: 850px; }
+#enquiry-form form button[type="submit"],
+#enquiry-form .wm-primary-btn,
+#enquiry-form .wm-form-submit {
+  position: relative;
+
+  width: 100%;
+  min-height: 58px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 4px;
+  padding: 13px 20px;
+
+  overflow: hidden;
+
+  color: #ffffff !important;
+
+  background: linear-gradient(
+    135deg,
+    #20c0ef 0%,
+    #176aca 58%,
+    #344bd5 100%
+  ) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 17px !important;
+
+  box-shadow:
+    0 18px 38px rgba(14, 118, 209, 0.36),
+    inset 0 1px 0 rgba(255, 255, 255, 0.29);
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 850;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
-@media (max-width: 760px) {
-  .wm-registration-copy__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#enquiry-form form button[type="submit"]::before,
+#enquiry-form .wm-primary-btn::before,
+#enquiry-form .wm-form-submit::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.55s ease;
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+#enquiry-form form button[type="submit"]:hover,
+#enquiry-form .wm-primary-btn:hover,
+#enquiry-form .wm-form-submit:hover {
+  transform: translateY(-3px);
 
-@media (max-width: 640px) {
-  .wm-registration-grid { gap: 24px; }
+  filter: brightness(1.05);
+
+  box-shadow:
+    0 23px 47px rgba(14, 118, 209, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+#enquiry-form form button[type="submit"]:hover::before,
+#enquiry-form .wm-primary-btn:hover::before,
+#enquiry-form .wm-form-submit:hover::before {
+  left: 140%;
+}
+
+/* =========================================================
+   FORM FOOTER
+========================================================= */
+
+.wm-registration-form-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 16px 21px 19px;
+
+  color: #809cad;
+
+  text-align: center;
+
+  font-size: 0.7rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.wm-registration-form-footer svg {
+  flex: 0 0 auto;
+  color: #55d8ff;
+}
+
+/* =========================================================
+   MEDIUM DESKTOP
+========================================================= */
+
+@media (max-width: 1120px) {
+  .wm-registration-grid {
+    grid-template-columns:
+      minmax(0, 0.92fr)
+      minmax(370px, 1.08fr);
+
+    gap: 28px;
+  }
 
   .wm-registration-copy__cards {
     grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 20px;
   }
 
   .wm-registration-copy__card {
-    display: flex;
+    min-height: auto;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
     gap: 14px;
-    padding: 17px;
-    text-align: left;
+  }
+
+  .wm-registration-copy__card-top {
+    display: block;
+  }
+
+  .wm-registration-copy__number {
+    display: none;
+  }
+
+  .wm-registration-copy__card h3 {
+    margin: 0;
+  }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 960px) {
+  .wm-registration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wm-registration-form-column {
+    position: relative;
+    top: auto;
+  }
+
+  .wm-registration-copy__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .wm-registration-copy__card {
+    display: block;
+    min-height: 170px;
+  }
+
+  .wm-registration-copy__card-top {
+    display: flex;
+  }
+
+  .wm-registration-copy__number {
+    display: block;
+  }
+
+  .wm-registration-copy__card h3 {
+    margin-top: 19px;
+  }
+
+  .wm-registration-form-shell {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+  .wm-registration-section {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  .wm-registration-heading {
+    margin-bottom: 32px;
+  }
+
+  .wm-registration-heading h2 {
+    font-size: clamp(1.9rem, 10vw, 2.7rem);
+  }
+
+  .wm-registration-heading p {
+    font-size: 0.9rem;
+  }
+
+  .wm-registration-grid {
+    gap: 24px;
+  }
+
+  .wm-registration-copy__cards {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .wm-registration-copy__card {
+    min-height: auto;
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 13px;
+
+    padding: 15px;
+    border-radius: 18px;
+  }
+
+  .wm-registration-copy__card-top {
+    display: block;
+  }
+
+  .wm-registration-copy__number {
+    display: none;
   }
 
   .wm-registration-copy__icon {
-    flex: 0 0 auto;
     width: 46px;
     height: 46px;
-    margin: 0;
-    border-radius: 15px;
+
+    border-radius: 14px;
   }
 
-  .wm-registration-copy__card h3 { font-size: 0.9rem; }
+  .wm-registration-copy__card h3 {
+    margin: 0;
+
+    font-size: 0.87rem;
+  }
 
   .wm-registration-copy__note {
-    margin-top: 18px;
     padding: 20px;
     border-radius: 22px;
   }
 
-  .wm-registration-copy__note h3 { font-size: 1.12rem; }
-  .wm-registration-copy__note li { font-size: 0.84rem; line-height: 1.65; }
+  .wm-registration-copy__note-header {
+    align-items: flex-start;
+  }
+
+  .wm-registration-copy__note h3 {
+    font-size: 1.1rem;
+  }
+
+  .wm-registration-copy__note li {
+    padding: 11px;
+
+    font-size: 0.82rem;
+  }
 
   .wm-registration-copy__cta-row {
-    align-items: stretch;
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
-  .wm-registration-copy__cta-row .wm-secondary-btn,
-  .wm-registration-copy__cta-row .wm-link-btn { width: 100%; }
+  .wm-registration-paid-btn {
+    min-height: 54px;
+  }
 
+  .wm-registration-form-shell {
+    padding: 7px;
+    border-radius: 27px;
+  }
+
+  .wm-registration-form-header {
+    padding: 21px 19px 16px;
+  }
+
+  .wm-registration-form-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .wm-registration-form-wrap {
+    padding: 3px;
+  }
+
+  .wm-registration-form-wrap form {
+    padding: 18px !important;
+    border-radius: 21px !important;
+  }
+
+  #enquiry-form input:not([type="checkbox"]):not([type="radio"]),
   #enquiry-form select {
-    min-height: 56px;
-    padding-right: 42px;
-    padding-left: 18px;
-    border-radius: 16px;
-    font-size: 0.94rem;
+    min-height: 54px;
+
+    padding-left: 15px;
+
+    border-radius: 14px !important;
+
+    font-size: 0.88rem;
   }
 
-  #enquiry-form select option,
-  #enquiry-form select optgroup { font-size: 0.94rem; }
+  #enquiry-form textarea {
+    min-height: 105px;
+
+    padding: 14px 15px;
+
+    border-radius: 14px !important;
+
+    font-size: 0.88rem;
+  }
+
+  #enquiry-form form button[type="submit"],
+  #enquiry-form .wm-primary-btn,
+  #enquiry-form .wm-form-submit {
+    min-height: 55px;
+
+    border-radius: 15px !important;
+
+    font-size: 0.87rem;
+  }
 }
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 380px) {
-  .wm-registration-copy__note { padding: 17px; }
-  .wm-registration-copy__card { padding: 14px; }
+@media (max-width: 420px) {
+  .wm-registration-heading__eyebrow {
+    padding: 8px 12px;
+
+    font-size: 0.64rem;
+  }
+
+  .wm-registration-copy__note {
+    padding: 17px;
+  }
+
+  .wm-registration-form-footer {
+    align-items: flex-start;
+
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .wm-registration-copy__card,
+  .wm-registration-call-btn,
+  .wm-registration-paid-btn,
+  #enquiry-form input,
+  #enquiry-form select,
+  #enquiry-form textarea,
+  #enquiry-form button {
+    transition: none;
+  }
 }

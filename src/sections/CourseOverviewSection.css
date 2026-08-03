@@ -1,29 +1,208 @@
-/* =========================================
-   COURSE OVERVIEW SECTION
-   Theme: Slate Blue + Cyan
-========================================= */
+/* =========================================================
+   PREMIUM COURSE OVERVIEW SECTION
+========================================================= */
 
-#curriculum {
+.wm-course-overview {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
+
+  padding-top: clamp(78px, 8vw, 120px);
+  padding-bottom: clamp(78px, 8vw, 120px);
 
   background:
     radial-gradient(
-      ellipse 60% 50% at 95% 5%,
-      rgba(94, 200, 245, 0.1) 0%,
-      transparent 50%
+      circle at 10% 15%,
+      rgba(41, 160, 255, 0.16),
+      transparent 28%
     ),
     radial-gradient(
-      ellipse 50% 45% at 5% 95%,
-      rgba(10, 82, 168, 0.16) 0%,
-      transparent 52%
+      circle at 88% 16%,
+      rgba(23, 219, 255, 0.13),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 75% 90%,
+      rgba(78, 91, 255, 0.14),
+      transparent 30%
     ),
     linear-gradient(
-      165deg,
-      var(--wm-course-bg-from) 0%,
-      #081629 45%,
-      var(--wm-course-bg-to) 100%
+      145deg,
+      #020817 0%,
+      #071426 42%,
+      #061124 70%,
+      #020916 100%
     );
+}
+
+.wm-course-overview::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 18%,
+    #000 82%,
+    transparent
+  );
+}
+
+.wm-course-overview::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -1;
+
+  width: min(820px, 90%);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(89, 210, 255, 0.65),
+    transparent
+  );
+
+  box-shadow: 0 0 35px rgba(39, 190, 255, 0.4);
+}
+
+.wm-course-overview__container {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+========================================================= */
+
+.wm-course-overview__glow {
+  position: absolute;
+  z-index: -1;
+
+  border-radius: 999px;
+  pointer-events: none;
+
+  filter: blur(10px);
+  opacity: 0.65;
+}
+
+.wm-course-overview__glow--one {
+  top: 120px;
+  right: -180px;
+
+  width: 450px;
+  height: 450px;
+
+  background: radial-gradient(
+    circle,
+    rgba(29, 186, 255, 0.2),
+    transparent 68%
+  );
+}
+
+.wm-course-overview__glow--two {
+  bottom: 40px;
+  left: -190px;
+
+  width: 460px;
+  height: 460px;
+
+  background: radial-gradient(
+    circle,
+    rgba(66, 82, 255, 0.18),
+    transparent 68%
+  );
+}
+
+.wm-course-overview__grid-pattern {
+  position: absolute;
+  top: 240px;
+  right: 4%;
+  z-index: -1;
+
+  width: 180px;
+  height: 180px;
+
+  opacity: 0.22;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(117, 220, 255, 0.8) 1.2px,
+    transparent 1.2px
+  );
+
+  background-size: 18px 18px;
+
+  mask-image: radial-gradient(
+    circle,
+    #000,
+    transparent 72%
+  );
+}
+
+/* =========================================================
+   TOP HIGHLIGHTS
+========================================================= */
+
+.wm-course-highlights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin: 28px auto 0;
+}
+
+.wm-course-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  color: #ccefff;
+
+  background: rgba(9, 31, 56, 0.65);
+  border: 1px solid rgba(113, 218, 255, 0.13);
+  border-radius: 999px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 7, 18, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.wm-course-highlight svg {
+  flex: 0 0 auto;
+  color: #55d6ff;
 }
 
 /* =========================================================
@@ -33,257 +212,483 @@
 .wm-learning-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
 
-  margin-top: 40px;
+  margin-top: 42px;
 }
 
 .wm-learning-card {
-  padding: 28px 24px;
+  position: relative;
+
+  min-width: 0;
+  min-height: 255px;
+
+  padding: 26px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(14, 39, 69, 0.92),
+      rgba(5, 19, 38, 0.82)
+    );
+
+  border: 1px solid rgba(118, 218, 255, 0.12);
+  border-radius: 26px;
+
+  box-shadow:
+    0 24px 65px rgba(0, 5, 15, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 
   transition:
-    transform 0.3s var(--wm-ease),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.wm-learning-card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  padding: 1px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    rgba(114, 222, 255, 0.32),
+    transparent 35%,
+    transparent 70%,
+    rgba(82, 104, 255, 0.16)
+  );
+
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .wm-learning-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(114, 216, 255, 0.22);
+  transform: translateY(-9px);
+
+  border-color: rgba(105, 218, 255, 0.27);
 
   box-shadow:
-    var(--wm-shadow),
-    0 0 40px rgba(26, 182, 232, 0.1);
+    0 30px 80px rgba(0, 6, 18, 0.48),
+    0 0 45px rgba(25, 178, 234, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.wm-learning-card__top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .wm-learning-card__icon {
-  width: 58px;
-  height: 58px;
+  width: 62px;
+  height: 62px;
 
   display: grid;
   place-items: center;
 
-  color: var(--wm-primary-3);
+  color: #ebfbff;
 
-  background: linear-gradient(
-    135deg,
-    rgba(10, 82, 168, 0.32),
-    rgba(26, 182, 232, 0.22)
-  );
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31, 163, 239, 0.95),
+      rgba(18, 85, 196, 0.96)
+    );
 
-  border: 1px solid rgba(114, 216, 255, 0.16);
-  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
 
-  box-shadow: 0 8px 24px rgba(26, 182, 232, 0.15);
+  box-shadow:
+    0 14px 34px rgba(13, 132, 220, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.wm-learning-card__number {
+  color: rgba(172, 229, 255, 0.24);
+
+  font-size: 2.35rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+
+.wm-learning-card__content {
+  position: relative;
+  z-index: 2;
 }
 
 .wm-learning-card h3 {
-  margin: 22px 0 12px;
+  margin: 24px 0 11px;
 
-  color: #eef7ff;
-  font-size: 1.3rem;
+  color: #f4fbff;
+
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.3;
 }
 
 .wm-learning-card p {
   margin: 0;
 
-  color: var(--wm-text-soft);
-  line-height: 1.82;
+  color: #9eb6ca;
+
+  font-size: 0.93rem;
+  line-height: 1.78;
+}
+
+.wm-learning-card__shine {
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+
+  width: 210px;
+  height: 210px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(31, 183, 245, 0.16),
+    transparent 68%
+  );
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.wm-learning-card:hover .wm-learning-card__shine {
+  transform: scale(1.18);
+  opacity: 1;
 }
 
 /* =========================================================
-   AGENDA AND SESSION SIDE-BY-SIDE LAYOUT
+   MAIN TWO-COLUMN LAYOUT
 ========================================================= */
 
 .wm-agenda-grid {
   display: grid;
-
-  /* Both sections now side by side */
   grid-template-columns:
-    minmax(0, 1fr)
-    minmax(0, 1fr);
+    minmax(0, 1.05fr)
+    minmax(0, 0.95fr);
 
   align-items: stretch;
-  gap: 24px;
+  gap: 22px;
 
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
-.wm-agenda-block,
-.wm-schedule-block {
+.wm-overview-panel {
   position: relative;
 
   min-width: 0;
-  height: 100%;
 
   padding: 28px;
 
-  display: flex;
-  flex-direction: column;
-
   overflow: hidden;
 
+  background:
+    linear-gradient(
+      150deg,
+      rgba(13, 37, 65, 0.95),
+      rgba(4, 17, 34, 0.92)
+    );
+
+  border: 1px solid rgba(118, 218, 255, 0.12);
+  border-radius: 30px;
+
+  box-shadow:
+    0 28px 75px rgba(0, 5, 16, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
   transition:
-    transform 0.3s var(--wm-ease),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-.wm-agenda-block::before,
-.wm-schedule-block::before {
+.wm-overview-panel::before {
   content: "";
 
   position: absolute;
   top: 0;
-  left: 26px;
-  right: 26px;
+  left: 34px;
+  right: 34px;
 
-  height: 2px;
+  height: 1px;
 
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(84, 207, 255, 0.85),
+    rgba(84, 211, 255, 0.85),
     transparent
   );
+
+  box-shadow: 0 0 25px rgba(40, 185, 244, 0.45);
 }
 
-.wm-agenda-block:hover,
-.wm-schedule-block:hover {
-  transform: translateY(-4px);
+.wm-overview-panel::after {
+  content: "";
 
-  border-color: rgba(114, 216, 255, 0.2);
+  position: absolute;
+  top: -120px;
+  right: -130px;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(29, 175, 239, 0.11),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.wm-overview-panel:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(111, 221, 255, 0.22);
 
   box-shadow:
-    var(--wm-shadow),
-    0 0 50px rgba(26, 182, 232, 0.08);
+    0 34px 90px rgba(0, 5, 17, 0.5),
+    0 0 50px rgba(28, 179, 237, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055);
 }
 
 /* =========================================================
-   COMMON BLOCK HEADING
+   PANEL HEADER
 ========================================================= */
 
-.wm-overview-block__heading {
-  min-height: 122px;
-  margin-bottom: 22px;
+.wm-overview-panel__header {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: flex-start;
+  gap: 15px;
+
+  margin-bottom: 25px;
+  padding-bottom: 23px;
+
+  border-bottom: 1px solid rgba(121, 216, 255, 0.1);
+}
+
+.wm-overview-panel__header-icon {
+  width: 48px;
+  height: 48px;
+
+  display: grid;
+  place-items: center;
+
+  color: #a9ecff;
+
+  background: linear-gradient(
+    145deg,
+    rgba(26, 173, 237, 0.2),
+    rgba(20, 76, 171, 0.18)
+  );
+
+  border: 1px solid rgba(108, 218, 255, 0.16);
+  border-radius: 16px;
+
+  box-shadow: 0 12px 30px rgba(0, 12, 30, 0.26);
+}
+
+.wm-overview-panel__heading {
+  min-width: 0;
 }
 
 .wm-overview-block__label {
   display: inline-flex;
   align-items: center;
 
-  margin-bottom: 10px;
+  margin-bottom: 9px;
   padding: 6px 11px;
 
-  color: #82ddff;
+  color: #6edcff;
 
-  background: rgba(26, 182, 232, 0.09);
-  border: 1px solid rgba(114, 216, 255, 0.15);
+  background: rgba(31, 179, 235, 0.09);
+  border: 1px solid rgba(110, 220, 255, 0.13);
   border-radius: 999px;
 
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
+  line-height: 1;
   text-transform: uppercase;
 }
 
-.wm-overview-block__heading h3,
+.wm-overview-panel__heading h3,
 .wm-audience-block h3 {
   margin: 0;
 
-  color: var(--wm-text);
+  color: #f2faff;
 
-  font-size: clamp(1.35rem, 2vw, 1.75rem);
-  font-weight: 800;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 850;
   line-height: 1.25;
+  letter-spacing: -0.025em;
 }
 
-.wm-overview-block__heading p {
-  margin: 10px 0 0;
+.wm-overview-panel__heading p {
+  margin: 9px 0 0;
 
-  color: var(--wm-text-soft);
-  font-size: 0.92rem;
-  line-height: 1.7;
+  color: #91aabe;
+
+  font-size: 0.9rem;
+  line-height: 1.68;
 }
 
 /* =========================================================
-   WHAT WILL BE COVERED
+   AGENDA CARDS
 ========================================================= */
 
 .wm-agenda-cards {
-  flex: 1;
+  position: relative;
+  z-index: 2;
 
   display: grid;
-  grid-template-columns: 1fr;
-  align-content: start;
-  gap: 14px;
+  gap: 13px;
 }
 
 .wm-agenda-card {
+  position: relative;
+
   min-width: 0;
 
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
+  grid-template-columns: 55px minmax(0, 1fr);
   align-items: flex-start;
   gap: 16px;
 
-  padding: 18px;
+  padding: 17px;
 
-  background: rgba(26, 182, 232, 0.04);
-  border: 1px solid rgba(114, 216, 255, 0.1);
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 49, 81, 0.64),
+      rgba(7, 27, 49, 0.74)
+    );
+
+  border: 1px solid rgba(114, 217, 255, 0.1);
   border-radius: 20px;
 
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.025),
+    0 12px 28px rgba(0, 6, 18, 0.16);
+
   transition:
-    transform 0.28s var(--wm-ease),
-    border-color 0.28s ease,
-    background 0.28s ease,
-    box-shadow 0.28s ease;
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.wm-agenda-card::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 80px;
+  height: 80px;
+
+  background: radial-gradient(
+    circle at top right,
+    rgba(34, 181, 240, 0.1),
+    transparent 68%
+  );
 }
 
 .wm-agenda-card:hover {
-  transform: translateY(-3px);
+  transform: translateX(5px);
 
-  background: rgba(26, 182, 232, 0.08);
-  border-color: rgba(114, 216, 255, 0.24);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(19, 61, 99, 0.78),
+      rgba(8, 31, 56, 0.84)
+    );
 
-  box-shadow: 0 14px 35px rgba(0, 8, 20, 0.28);
+  border-color: rgba(111, 220, 255, 0.22);
+
+  box-shadow:
+    0 17px 40px rgba(0, 6, 18, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .wm-agenda-card__number {
-  width: 56px;
-  height: 56px;
+  position: relative;
+  z-index: 2;
+
+  width: 55px;
+  height: 55px;
 
   display: grid;
   place-items: center;
 
   color: #ffffff;
 
-  background: linear-gradient(
-    135deg,
-    #1066c6,
-    #1ab6e8
-  );
+  background:
+    linear-gradient(
+      145deg,
+      #1fb9ee,
+      #1763c7 85%
+    );
 
+  border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 17px;
 
-  font-size: 1rem;
+  box-shadow:
+    0 12px 27px rgba(13, 121, 208, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  font-size: 0.94rem;
   font-weight: 900;
   line-height: 1;
-
-  box-shadow:
-    0 10px 24px rgba(26, 182, 232, 0.24),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
 .wm-agenda-card__content {
+  position: relative;
+  z-index: 2;
+
   min-width: 0;
 }
 
 .wm-agenda-card h4 {
-  margin: 2px 0 12px;
+  margin: 1px 0 11px;
 
-  color: var(--wm-text);
-  font-size: 1.08rem;
+  color: #eaf8ff;
+
+  font-size: 1.04rem;
   font-weight: 800;
   line-height: 1.35;
 }
@@ -293,9 +698,6 @@
   padding: 0;
 
   display: grid;
-
-  /* One column because parent section is now half width */
-  grid-template-columns: 1fr;
   gap: 8px;
 
   list-style: none;
@@ -308,102 +710,170 @@
   align-items: flex-start;
   gap: 9px;
 
-  color: var(--wm-text-soft);
-  font-size: 0.9rem;
+  color: #9bb5c9;
+
+  font-size: 0.875rem;
   line-height: 1.55;
 }
 
-.wm-agenda-card li svg {
+.wm-list-check {
   flex: 0 0 auto;
 
-  margin-top: 3px;
-
-  color: var(--wm-primary-3);
-}
-
-.wm-agenda-card li span {
-  min-width: 0;
-}
-
-/* =========================================================
-   SESSION BREAKDOWN
-========================================================= */
-
-.wm-schedule-list {
-  flex: 1;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  align-content: start;
-  gap: 14px;
-}
-
-.wm-schedule-item {
-  min-width: 0;
-
-  display: grid;
-  grid-template-columns: 56px minmax(0, 1fr);
-  align-items: flex-start;
-  gap: 16px;
-
-  padding: 18px;
-
-  background: rgba(26, 182, 232, 0.04);
-  border: 1px solid rgba(114, 216, 255, 0.1);
-  border-radius: 20px;
-
-  transition:
-    transform 0.28s var(--wm-ease),
-    border-color 0.28s ease,
-    background 0.28s ease,
-    box-shadow 0.28s ease;
-}
-
-.wm-schedule-item:hover {
-  transform: translateY(-3px);
-
-  background: rgba(26, 182, 232, 0.08);
-  border-color: rgba(114, 216, 255, 0.24);
-
-  box-shadow: 0 14px 35px rgba(0, 8, 20, 0.28);
-}
-
-.wm-schedule-item__step {
-  width: 56px;
-  height: 56px;
+  width: 24px;
+  height: 24px;
 
   display: grid;
   place-items: center;
 
+  margin-top: -1px;
+
+  color: #5bdcff;
+
+  background: rgba(36, 183, 236, 0.1);
+  border: 1px solid rgba(100, 220, 255, 0.12);
+  border-radius: 50%;
+}
+
+/* =========================================================
+   SCHEDULE TIMELINE
+========================================================= */
+
+.wm-schedule-list {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  gap: 4px;
+}
+
+.wm-schedule-item {
+  position: relative;
+
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: stretch;
+  gap: 15px;
+}
+
+.wm-schedule-item__rail {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wm-schedule-item__step {
+  position: relative;
+  z-index: 2;
+
+  width: 56px;
+  min-height: 56px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 7px;
+
   color: #ffffff;
 
-  background: linear-gradient(
-    135deg,
-    #1066c6,
-    #1ab6e8
-  );
+  background:
+    linear-gradient(
+      145deg,
+      #1db7eb,
+      #175ec2
+    );
 
-  border-radius: 17px;
-
-  font-size: 1rem;
-  font-weight: 900;
-  line-height: 1;
-  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
 
   box-shadow:
-    0 10px 24px rgba(26, 182, 232, 0.24),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    0 12px 28px rgba(15, 117, 204, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.wm-schedule-item__line {
+  width: 1px;
+  flex: 1;
+  min-height: 30px;
+
+  margin: 5px 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(73, 205, 255, 0.65),
+    rgba(73, 205, 255, 0.06)
+  );
+
+  box-shadow: 0 0 8px rgba(47, 192, 248, 0.22);
 }
 
 .wm-schedule-item__content {
   min-width: 0;
+
+  margin-bottom: 13px;
+  padding: 16px 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 49, 81, 0.62),
+      rgba(7, 27, 49, 0.72)
+    );
+
+  border: 1px solid rgba(114, 217, 255, 0.1);
+  border-radius: 19px;
+
+  box-shadow:
+    0 12px 28px rgba(0, 6, 18, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.wm-schedule-item:hover .wm-schedule-item__content {
+  transform: translateX(5px);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(19, 61, 99, 0.76),
+      rgba(8, 31, 56, 0.82)
+    );
+
+  border-color: rgba(111, 220, 255, 0.22);
+}
+
+.wm-schedule-item__eyebrow {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #55d7ff;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .wm-schedule-item h4 {
-  margin: 2px 0 7px;
+  margin: 0 0 6px;
 
-  color: var(--wm-text);
-  font-size: 1.08rem;
+  color: #eaf8ff;
+
+  font-size: 1.03rem;
   font-weight: 800;
   line-height: 1.35;
 }
@@ -411,9 +881,37 @@
 .wm-schedule-item p {
   margin: 0;
 
-  color: var(--wm-text-soft);
-  font-size: 0.9rem;
-  line-height: 1.65;
+  color: #9bb5c9;
+
+  font-size: 0.875rem;
+  line-height: 1.62;
+}
+
+.wm-schedule-footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 11px;
+  padding: 14px 16px;
+
+  color: #add8e9;
+
+  background: rgba(29, 171, 230, 0.075);
+  border: 1px solid rgba(104, 218, 255, 0.11);
+  border-radius: 16px;
+
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.wm-schedule-footer svg {
+  flex: 0 0 auto;
+  color: #5bdcff;
 }
 
 /* =========================================================
@@ -421,88 +919,210 @@
 ========================================================= */
 
 .wm-audience-block {
-  padding: 30px;
+  position: relative;
 
   display: grid;
   grid-template-columns:
-    minmax(0, 0.85fr)
-    minmax(0, 1.15fr);
+    minmax(0, 0.82fr)
+    minmax(0, 1.18fr);
 
   align-items: center;
-  gap: 32px;
+  gap: clamp(28px, 5vw, 70px);
 
   margin-top: 24px;
+  padding: clamp(28px, 4vw, 46px);
 
-  transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
+  overflow: hidden;
 
-.wm-audience-block:hover {
-  border-color: rgba(114, 216, 255, 0.18);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(15, 49, 83, 0.95),
+      rgba(5, 19, 38, 0.94)
+    );
+
+  border: 1px solid rgba(116, 221, 255, 0.14);
+  border-radius: 32px;
 
   box-shadow:
-    var(--wm-shadow),
-    0 0 45px rgba(26, 182, 232, 0.07);
+    0 30px 80px rgba(0, 5, 17, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.wm-audience-block::before {
+  content: "";
+
+  position: absolute;
+  top: -100px;
+  left: -100px;
+
+  width: 310px;
+  height: 310px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(39, 188, 245, 0.17),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.wm-audience-block::after {
+  content: "";
+
+  position: absolute;
+  right: -100px;
+  bottom: -130px;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(67, 86, 255, 0.13),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.wm-audience-block__content,
+.wm-audience-list {
+  position: relative;
+  z-index: 2;
+}
+
+.wm-audience-block__icon {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 18px;
+
+  color: #f0fbff;
+
+  background: linear-gradient(
+    145deg,
+    #1db6ec,
+    #195bc1
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+
+  box-shadow:
+    0 15px 35px rgba(13, 123, 211, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .wm-audience-block h3 {
-  margin-bottom: 12px;
+  max-width: 500px;
+  margin-bottom: 13px;
 }
 
 .wm-audience-block p {
+  max-width: 560px;
   margin: 0;
 
-  color: var(--wm-text-soft);
-  line-height: 1.82;
+  color: #99b3c6;
+
+  font-size: 0.94rem;
+  line-height: 1.8;
 }
 
 .wm-audience-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px 18px;
+  gap: 12px;
 }
 
 .wm-audience-list__item {
   min-width: 0;
 
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
   gap: 10px;
 
-  padding: 14px 16px;
+  padding: 14px;
 
-  color: #d4ecfa;
+  color: #d7edf7;
 
-  background: rgba(26, 182, 232, 0.05);
-  border: 1px solid rgba(114, 216, 255, 0.12);
-  border-radius: 16px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(17, 56, 90, 0.62),
+      rgba(7, 29, 52, 0.7)
+    );
 
-  line-height: 1.6;
+  border: 1px solid rgba(111, 218, 255, 0.11);
+  border-radius: 17px;
+
+  box-shadow:
+    0 12px 26px rgba(0, 6, 18, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
 
   transition:
-    background 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s var(--wm-ease);
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
 .wm-audience-list__item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 
-  background: rgba(26, 182, 232, 0.1);
-  border-color: rgba(114, 216, 255, 0.24);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22, 70, 109, 0.78),
+      rgba(8, 34, 61, 0.82)
+    );
+
+  border-color: rgba(111, 220, 255, 0.23);
 }
 
-.wm-audience-list__item svg {
-  flex: 0 0 auto;
+.wm-audience-list__number {
+  color: rgba(128, 218, 255, 0.43);
 
-  margin-top: 3px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+}
 
-  color: var(--wm-primary-3);
+.wm-audience-list__check {
+  width: 29px;
+  height: 29px;
+
+  display: grid;
+  place-items: center;
+
+  color: #60ddff;
+
+  background: rgba(35, 181, 235, 0.1);
+  border: 1px solid rgba(101, 219, 255, 0.12);
+  border-radius: 50%;
+}
+
+.wm-audience-list__text {
+  min-width: 0;
+
+  font-size: 0.86rem;
+  font-weight: 650;
+  line-height: 1.5;
 }
 
 /* =========================================================
-   MEDIUM DESKTOP
+   LARGE TABLET / SMALL DESKTOP
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -511,43 +1131,19 @@
   }
 
   .wm-agenda-grid {
-    gap: 18px;
+    grid-template-columns: 1fr;
   }
 
-  .wm-agenda-block,
-  .wm-schedule-block {
-    padding: 22px;
-  }
-
-  .wm-agenda-card,
-  .wm-schedule-item {
-    grid-template-columns: 50px minmax(0, 1fr);
-    gap: 13px;
-
-    padding: 15px;
-  }
-
-  .wm-agenda-card__number,
-  .wm-schedule-item__step {
-    width: 50px;
-    height: 50px;
-
-    border-radius: 15px;
-    font-size: 0.92rem;
-  }
-
-  .wm-agenda-card h4,
-  .wm-schedule-item h4 {
-    font-size: 1rem;
-  }
-
-  .wm-agenda-card li,
-  .wm-schedule-item p {
-    font-size: 0.86rem;
+  .wm-overview-panel {
+    padding: 26px;
   }
 
   .wm-audience-block {
     grid-template-columns: 1fr;
+  }
+
+  .wm-audience-block__content {
+    max-width: 700px;
   }
 }
 
@@ -555,27 +1151,43 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .wm-course-overview {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .wm-learning-grid {
+    gap: 15px;
+  }
+
+  .wm-learning-card {
+    min-height: auto;
+    padding: 22px;
+  }
+
   .wm-agenda-grid {
-    /* Stack only on tablet/mobile */
+    gap: 18px;
+  }
+
+  .wm-overview-panel {
+    padding: 21px;
+    border-radius: 25px;
+  }
+
+  .wm-overview-panel__header {
     grid-template-columns: 1fr;
   }
 
-  .wm-overview-block__heading {
-    min-height: auto;
+  .wm-overview-panel__header-icon {
+    width: 44px;
+    height: 44px;
   }
 
-  .wm-agenda-block,
-  .wm-schedule-block {
-    height: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .wm-agenda-block,
-  .wm-schedule-block,
   .wm-audience-block {
-    padding: 22px;
+    gap: 26px;
+    padding: 25px;
+    border-radius: 27px;
   }
 
   .wm-audience-list {
@@ -588,71 +1200,123 @@
 ========================================================= */
 
 @media (max-width: 640px) {
+  .wm-course-highlights {
+    justify-content: flex-start;
+
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    margin-right: -18px;
+    padding-right: 18px;
+    padding-bottom: 5px;
+
+    scrollbar-width: none;
+  }
+
+  .wm-course-highlights::-webkit-scrollbar {
+    display: none;
+  }
+
+  .wm-course-highlight {
+    flex: 0 0 auto;
+  }
+
   .wm-learning-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
-
-    margin-top: 28px;
+    margin-top: 30px;
   }
 
   .wm-learning-card {
-    padding: 20px;
-  }
-
-  .wm-agenda-grid {
-    gap: 18px;
-  }
-
-  .wm-agenda-block,
-  .wm-schedule-block,
-  .wm-audience-block {
-    padding: 18px;
-
     border-radius: 22px;
   }
 
-  .wm-overview-block__heading {
-    margin-bottom: 18px;
-  }
-
-  .wm-overview-block__heading h3,
-  .wm-audience-block h3 {
-    font-size: 1.3rem;
-  }
-
-  .wm-overview-block__heading p {
-    font-size: 0.86rem;
-  }
-
-  .wm-agenda-card,
-  .wm-schedule-item {
-    grid-template-columns: 52px minmax(0, 1fr);
-    gap: 13px;
-
-    padding: 16px;
-
+  .wm-learning-card__icon {
+    width: 56px;
+    height: 56px;
     border-radius: 18px;
   }
 
-  .wm-agenda-card__number,
-  .wm-schedule-item__step {
-    width: 52px;
-    height: 52px;
+  .wm-learning-card__number {
+    font-size: 2rem;
+  }
 
-    border-radius: 16px;
-    font-size: 0.95rem;
+  .wm-learning-card h3 {
+    margin-top: 20px;
+  }
+
+  .wm-overview-panel {
+    padding: 18px;
+    border-radius: 23px;
+  }
+
+  .wm-overview-panel__header {
+    margin-bottom: 19px;
+    padding-bottom: 19px;
+  }
+
+  .wm-overview-panel__heading h3,
+  .wm-audience-block h3 {
+    font-size: 1.35rem;
+  }
+
+  .wm-agenda-card {
+    grid-template-columns: 49px minmax(0, 1fr);
+    gap: 13px;
+
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .wm-agenda-card__number {
+    width: 49px;
+    height: 49px;
+
+    border-radius: 15px;
+    font-size: 0.84rem;
   }
 
   .wm-agenda-card h4,
   .wm-schedule-item h4 {
-    margin-top: 1px;
-
-    font-size: 1rem;
+    font-size: 0.98rem;
   }
 
   .wm-agenda-card li,
   .wm-schedule-item p {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
+  }
+
+  .wm-schedule-item {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .wm-schedule-item__step {
+    width: 48px;
+    min-height: 48px;
+
+    border-radius: 15px;
+    font-size: 0.68rem;
+  }
+
+  .wm-schedule-item__content {
+    padding: 14px;
+    border-radius: 17px;
+  }
+
+  .wm-schedule-footer {
+    align-items: flex-start;
+  }
+
+  .wm-audience-block {
+    padding: 21px;
+    border-radius: 24px;
+  }
+
+  .wm-audience-block__icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 18px;
   }
 }
 
@@ -661,26 +1325,85 @@
 ========================================================= */
 
 @media (max-width: 430px) {
-  .wm-agenda-card,
-  .wm-schedule-item {
-    grid-template-columns: 46px minmax(0, 1fr);
+  .wm-course-overview {
+    padding-top: 62px;
+    padding-bottom: 62px;
+  }
+
+  .wm-learning-card {
+    padding: 19px;
+  }
+
+  .wm-overview-panel {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .wm-agenda-card {
+    grid-template-columns: 44px minmax(0, 1fr);
     gap: 11px;
 
-    padding: 14px;
+    padding: 12px;
   }
 
-  .wm-agenda-card__number,
+  .wm-agenda-card__number {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 13px;
+    font-size: 0.78rem;
+  }
+
+  .wm-list-check {
+    width: 22px;
+    height: 22px;
+  }
+
+  .wm-schedule-item {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 9px;
+  }
+
   .wm-schedule-item__step {
-    width: 46px;
-    height: 46px;
+    width: 42px;
+    min-height: 42px;
 
-    border-radius: 14px;
-    font-size: 0.85rem;
+    padding: 5px;
+
+    border-radius: 13px;
+    font-size: 0.62rem;
   }
 
-  .wm-agenda-block,
-  .wm-schedule-block,
+  .wm-schedule-item__content {
+    padding: 12px;
+  }
+
   .wm-audience-block {
-    padding: 15px;
+    padding: 18px;
+  }
+
+  .wm-audience-list__item {
+    grid-template-columns: auto auto minmax(0, 1fr);
+
+    padding: 12px;
+  }
+
+  .wm-audience-list__number {
+    display: none;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .wm-learning-card,
+  .wm-overview-panel,
+  .wm-agenda-card,
+  .wm-schedule-item__content,
+  .wm-audience-list__item,
+  .wm-learning-card__shine {
+    transition: none;
   }
 }

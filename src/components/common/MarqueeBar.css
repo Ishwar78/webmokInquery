@@ -6,8 +6,12 @@
   position: sticky;
   top: 0;
   z-index: 60;
+
+  width: 100%;
+
   overflow: hidden;
   white-space: nowrap;
+
   border-bottom: 1px solid rgba(114, 216, 255, 0.2);
 
   background: linear-gradient(
@@ -20,42 +24,224 @@
   );
 
   box-shadow: 0 2px 20px rgba(26, 182, 232, 0.25);
+
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  outline: none;
 }
+
+/* Keyboard focus */
+.wm-marquee:focus-visible {
+  box-shadow:
+    0 2px 20px rgba(26, 182, 232, 0.25),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.72);
+}
+
+/* Left/right soft fade */
+.wm-marquee::before,
+.wm-marquee::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+
+  width: 70px;
+
+  pointer-events: none;
+}
+
+.wm-marquee::before {
+  left: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(8, 76, 142, 0.96),
+    transparent
+  );
+}
+
+.wm-marquee::after {
+  right: 0;
+
+  background: linear-gradient(
+    270deg,
+    rgba(8, 76, 142, 0.96),
+    transparent
+  );
+}
+
+/* ====================================
+   TRACK
+==================================== */
 
 .wm-marquee__track {
   display: inline-flex;
   align-items: center;
   gap: 30px;
+
   min-width: max-content;
+
   padding: 12px 0;
+
+  will-change: transform;
+
   animation: wmMarqueeScroll 22s linear infinite;
 }
 
-.wm-marquee:hover .wm-marquee__track {
-  animation-play-state: paused;
+/* Desktop hover pause */
+@media (hover: hover) and (pointer: fine) {
+  .wm-marquee:hover .wm-marquee__track {
+    animation-play-state: paused;
+  }
 }
+
+/* React controlled pause for mobile and desktop */
+.wm-marquee--paused .wm-marquee__track {
+  animation-play-state: paused !important;
+}
+
+/* ====================================
+   ITEM
+==================================== */
 
 .wm-marquee__item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   padding-left: 18px;
+
   color: #f0faff;
+
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.03em;
 }
 
 .wm-marquee__item svg {
-  color: rgba(255, 255, 255, 0.75);
+  flex: 0 0 auto;
+
+  color: rgba(255, 255, 255, 0.78);
 }
+
+/* ====================================
+   PAUSE STATUS
+==================================== */
+
+.wm-marquee__status {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  z-index: 5;
+
+  padding: 5px 9px;
+
+  color: #ffffff;
+
+  background: rgba(3, 37, 74, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+
+  box-shadow: 0 6px 18px rgba(0, 28, 60, 0.22);
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  line-height: 1;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateY(-50%) translateX(6px);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+/* Status desktop hover par dikhega */
+.wm-marquee:hover .wm-marquee__status,
+.wm-marquee:focus-visible .wm-marquee__status,
+.wm-marquee--paused .wm-marquee__status {
+  opacity: 1;
+
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ====================================
+   ANIMATION
+==================================== */
 
 @keyframes wmMarqueeScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
+/* ====================================
+   MOBILE
+==================================== */
+
 @media (max-width: 640px) {
-  .wm-marquee__track { gap: 22px; animation-duration: 18s; }
-  .wm-marquee__item { font-size: 0.75rem; }
+  .wm-marquee__track {
+    gap: 22px;
+
+    padding: 11px 0;
+
+    animation-duration: 18s;
+  }
+
+  .wm-marquee__item {
+    padding-left: 14px;
+
+    font-size: 0.75rem;
+  }
+
+  .wm-marquee__item svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .wm-marquee::before,
+  .wm-marquee::after {
+    width: 35px;
+  }
+
+  .wm-marquee__status {
+    top: auto;
+    right: 8px;
+    bottom: 4px;
+
+    padding: 4px 7px;
+
+    font-size: 0.54rem;
+
+    transform: translateX(5px);
+  }
+
+  .wm-marquee--paused .wm-marquee__status {
+    transform: translateX(0);
+  }
+}
+
+/* ====================================
+   REDUCED MOTION
+==================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .wm-marquee__track {
+    animation-duration: 45s;
+  }
+
+  .wm-marquee__status {
+    transition: none;
+  }
 }
