@@ -22,27 +22,27 @@ export default function FooterSection() {
           <a href={`tel:${EVENT.callNumber}`}>
             <Phone size={18} />
             {EVENT.callNumber}
-          </a>
+          </a><br/>
           <a href={waHref} target="_blank" rel="noreferrer">
             <MessageCircle size={18} />
             Chat on WhatsApp
           </a>
         </div>
 
-        {/* <div className="wm-footer__social">
+        <div className="wm-footer__social">
           <h3>Social Connect</h3>
           <div>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/webmokofficial" aria-label="Instagram">
               <FaInstagram />
             </a>
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/webmok" aria-label="Facebook">
               <FaFacebookF />
             </a>
-            <a href="#" aria-label="Twitter / X">
+            <a href="https://x.com/webmokofficial" aria-label="Twitter / X">
               <FaXTwitter />
             </a>
           </div>
-        </div> */}
+        </div>
       </div>
       <div className="wm-container">
         <div className="wm-footer__divider" />

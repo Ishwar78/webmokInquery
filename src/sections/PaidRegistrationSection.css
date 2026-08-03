@@ -14,12 +14,12 @@
   background:
     radial-gradient(
       ellipse 65% 55% at 8% 15%,
-      rgba(26, 182, 232, 0.14) 0%,
+      rgba(180, 216, 228, 0.14) 0%,
       transparent 55%
     ),
     radial-gradient(
       ellipse 50% 50% at 92% 80%,
-      rgba(10, 111, 255, 0.14) 0%,
+      rgba(232, 237, 244, 0.14) 0%,
       transparent 50%
     ),
     radial-gradient(
@@ -30,7 +30,7 @@
     linear-gradient(
       175deg,
       var(--wm-paid-bg-from) 0%,
-      #071428 40%,
+      #c9dbed 30%,
       var(--wm-paid-bg-to) 100%
     );
 }

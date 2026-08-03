@@ -30,7 +30,7 @@
     linear-gradient(
       170deg,
       var(--wm-reg-bg-from) 0%,
-      #071428 45%,
+    #e9ebed 30%,
       var(--wm-reg-bg-to) 100%
     );
 }
